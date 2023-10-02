@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="functions.js"></script>
+
+    <script type="text/javascript">
+        function myfunction() {
+            alert("how are you");
+        }</script>
+</head>
+
 <body>
 
 
@@ -8,9 +19,30 @@
 
     <p>hello</p>
 
-    <script>
-        <button type="button" onclick="document.write(5 + 6)">Try it</button>
-    </script>
+    <input type="button" onclick="myFunction()" value="Display">
+    <p> <a href="#" onClick="myFunction();"> Click Me</a>  </p>
+
+
+    <div class="row">
+        <div class="column">
+
+
+            <script>var x = Math.floor(Math.random() * 10);
+                document.write(myFunction());
+                //alert("hello");</script>
+            <!--<button type="button" onclick="alert(x)">Try it</button>-->
+        </div>
+
+
+        <div class="column">
+            <script>var x = Math.floor(Math.random() * 10);
+                document.write("hello" + x);
+                                                    //<button type="button" onclick="document.write(5 + 6)">Try it</button></script>
+        </div>
+
+    </div>
+
+
 
 
 </body>

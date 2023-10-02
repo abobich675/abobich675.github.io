@@ -1,0 +1,9 @@
+# abobich675.github.io
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+}
