@@ -9,37 +9,64 @@
 <body>
 
 
+    <!--Page Head-->
+
     <h1>D&D Roll</h1>
 
-    <label for="AC">Enter your target's Armor Class in the field below:</label> </br>
+    <label for="AC">Enter your target's Armor Class in the field below:</label> <br />
     <input type="text" id="AC" name="AC" placeholder="Armor Class">
 
 
-
+    <!--Start of all Roll Options-->
 
     <div class="row">
-        <div class="column" style="background-color:#aac;">
 
-            <p>Custom</p>
-            <input type="button" onclick="(weapon(roll(1,12),3))" value="Roll">
+        <div class="column" style="background-color:red">
+
+            <div class="row">
+
+                <!--Custom-->
+
+                <div class="column" style="background-color:#aac;">
+
+                    <p>Custom</p>
+                    <input type="button" onclick="(weapon(roll(1,12),3))" value="Roll">
+
+                </div>
+
+                <!--Greatsword-->
+
+                <div class="column" style="background-color:#aaa;">
+
+                    <p>Greatsword: 2d6 + 3</p>
+                    <input type="button" onclick="greatsword(3)" value="Roll">
+                    <p id="greatsword">hello</p>
+
+                </div>
+
+                <!--Greataxe-->
+
+                <div class="column" style="background-color:#bbb;">
+
+                    <p>Greataxe: 1d12 + 3</p>
+                    <input type="button" onclick="weapon(roll(1,12),3)" value="Roll">
+
+                </div>
+            </div>
         </div>
-        <div class="column" style="background-color:#aaa;">
 
-            <p>Greatsword: 2d6 + 3</p>
-            <input type="button" onclick="greatsword(3)" value="Roll">
+        <!--Feedback-->
+
+        <div class="column" style="max-width:25%; background-color: palegreen">
+            <p id="feedback">Sample Text</p>
         </div>
 
 
-        <div class="column" style="background-color:#bbb;">
-            <p>Greataxe: 1d12 + 3</p>
-            <input type="button" onclick="weapon(roll(1,12),3)" value="Roll">
-        </div>
-
-        <div class="column" style="background-color:#ccc;">
-            <p>hello</p>
-        </div>
 
     </div>
+
+
+        
 
 
 
