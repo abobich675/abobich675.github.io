@@ -7,9 +7,9 @@ function roll(count, size) {
     return roll;
 }
 
-function changeText() {
-    var element = document.getElementById("greatsword");
-    element.innerHTML = "Hello World!";
+function changeText(element, text) {
+    var element = document.getElementById(element);
+    element.innerHTML = text;
 }
 
 //function addText(element, text) {
@@ -51,8 +51,6 @@ function weapon(dmg, mod) {
 }
 
 function greatsword(mod) {
-
-    changeText();
     var ac = document.getElementById("AC").value;
     if (isNaN(ac) || ac == "") {
         alert("You must enter a valid Armor Class!");
@@ -68,6 +66,4 @@ function greatsword(mod) {
     if (success) {
         output("You rolled a " + toHit + " which beats your enemy's " + ac + " Armor Class\nYou deal " + damage + " damage!");
     } else { output("You rolled a " + toHit + " which misses your enemy's " + ac + " Armor Class"); }
-
-
 }

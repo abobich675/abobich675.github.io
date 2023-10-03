@@ -4,10 +4,10 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="functions.js"></script>
+    <link href="savedWeapons.txt" rel="import" />
 </head>
 
 <body>
-
 
     <!--Page Head-->
 
@@ -21,7 +21,7 @@
 
     <div class="row">
 
-        <div class="column" style="background-color:red">
+        <div class="column">
 
             <div class="row">
 
@@ -36,17 +36,16 @@
 
                 <!--Greatsword-->
 
-                <div class="column" style="background-color:#aaa;">
+                <div class="column" style="background-color: #aaa">
 
                     <p>Greatsword: 2d6 + 3</p>
                     <input type="button" onclick="greatsword(3)" value="Roll">
-                    <p id="greatsword">hello</p>
 
                 </div>
 
                 <!--Greataxe-->
 
-                <div class="column" style="background-color:#bbb;">
+                <div class="column" style="background-color: #bbb;">
 
                     <p>Greataxe: 1d12 + 3</p>
                     <input type="button" onclick="weapon(roll(1,12),3)" value="Roll">
@@ -57,8 +56,8 @@
 
         <!--Feedback-->
 
-        <div class="column" style="max-width:25%; background-color: palegreen">
-            <p id="feedback">Sample Text</p>
+        <div class="column" style="max-width: 25%">
+            <div id="feedback" style="background-color: palegreen; padding-top: 15px; min-height: 60px; border: solid; border-color: green; border-width: 5px">Output:</div>
         </div>
 
 
@@ -66,7 +65,7 @@
     </div>
 
 
-        
+
 
 
 
