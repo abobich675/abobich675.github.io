@@ -67,8 +67,8 @@ function weapon(dmg, mod) {
 
 function attack(weapon) {
     var modType = weapons["weapons"][0]["modifier"];
-    var str = document.getElementById("str").value;;
-    var dex = document.getElementById("dex").value;;
+    var str = document.getElementById("str").value;
+    var dex = document.getElementById("dex").value;
     var count = weapons["weapons"][0]["damage"]["count"];
     var size = weapons["weapons"][0]["damage"]["size"];
     var ac = document.getElementById("AC").value;
@@ -86,18 +86,27 @@ function attack(weapon) {
     }
 
     if (modType == "strength") {
-        if (isNaN(str) || str == "") alert("You must enter a valid strength modifier!");
-        else mod = str;
+        if (isNaN(str) || str == "") {
+            alert("You must enter a valid strength modifier!");
+            return;
+        } else mod = str;
     } else if (modType == "dexterity") {
-        if (isNaN(dex) || dex == "") alert("You must enter a valid dexterity modifier!");
-        else mod = dex;
+        if (isNaN(dex) || dex == "") {
+            alert("You must enter a valid dexterity modifier!");
+            return;
+        } else mod = dex;
     } else if (modType == "finesse") {
-        if (isNaN(str) || str == "" && isNaN(dex) || dex == "") alert("You must enter a valid strength or dexterity modifier!");
-        else if (isNaN(str) || str == "") mod = dex;
+        if (isNaN(str) || str == "" && isNaN(dex) || dex == "") {
+            alert("You must enter a valid strength or dexterity modifier!");
+            return;
+        } else if (isNaN(str) || str == "") mod = dex;
         else if (isNaN(dex) || dex == "") mod = str;
         else if (str >= dex) mod = str;
         else if (dex > str) mod = dex;
-        else output("An error has occured (strength or dexterity score invalid)");
+        else {
+            output("An error has occured (strength or dexterity score invalid)");
+            return;
+        }
     } else {
         output("An error has occured (modifier named identified)");
         return;
