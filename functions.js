@@ -82,5 +82,9 @@ function greatsword(mod) {
 }
 
 function createGrid(data) {
-    changeText('r1c1',data["weapons"][0]["name"]);
+
+
+    var label = data["weapons"][0]["name"] + ": " + data["weapons"][0]["damage"][0] + "d" + data["weapons"][0]["damage"][1];
+    if (data["weapons"][0]["bonus"] != 0) data += " + " + data["weapons"][0]["bonus"];
+    changeText('r1c1',label);
 }

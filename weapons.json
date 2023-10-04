@@ -2,7 +2,7 @@
     "test": "hi",
     "weapons": [
         {
-            "name": "greatsword",
+            "name": "Greatsword",
             "modifier": "strength",
             "bonus": 0,
             "damage": [
@@ -15,7 +15,7 @@
 
         },
         {
-            "name": "greataxe",
+            "name": "Greataxe",
             "modifier": "strength",
             "bonus": 0,
             "damage": [
