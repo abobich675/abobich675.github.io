@@ -1,7 +1,3 @@
-$.getJSON("weapons.json", function (json) {
-    console.log(json); // this will show the info it in firebug console
-});
-
 function roll(count, size) {
     var roll = 0;
     for (let i = 0; i < count; i++) {
@@ -88,5 +84,6 @@ function greatsword(mod) {
 async function getFile() {
     
     output(1);
-    
+    console.log("hello");
+
 }
