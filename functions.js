@@ -32,36 +32,69 @@ function output(text) {
 }
 
 
-function weapon(dmg, mod) {
-    var ac = document.getElementById("AC").value;
-    var critRule = document.getElementById("nat20").checked;
-    var toHit = Math.floor((Math.random() * 20) + 1)
-    var nat20 = false;
-    var nat1 = false;
-    var success;
-    var damage;
+//function weapon(dmg, mod) {
+//    var ac = document.getElementById("AC").value;
+//    var critRule = document.getElementById("nat20").checked;
+//    var toHit = Math.floor((Math.random() * 20) + 1)
+//    var nat20 = false;
+//    var nat1 = false;
+//    var success;
+//    var damage;
 
-    if (isNaN(ac) || ac == "") {
-        alert("You must enter a valid Armor Class!");
-        return;
-    }
+//    if (isNaN(ac) || ac == "") {
+//        alert("You must enter a valid Armor Class!");
+//        return;
+//    }
 
-    if (toHit == 20) nat20 = true;
-    else if (toHit == 1) nat1 = true;
-    else toHit += mod;
+//    if (toHit == 20) nat20 = true;
+//    else if (toHit == 1) nat1 = true;
+//    else toHit += mod;
 
-    if (critRule && nat20) success = true;
-    else if (toHit >= ac) success = true;
-    else success = false;
+//    if (critRule && nat20) success = true;
+//    else if (toHit >= ac) success = true;
+//    else success = false;
 
-    damage = dmg + mod;
-    if (nat20) damage += dmg;
+//    damage = dmg + mod;
+//    if (nat20) damage += dmg;
 
-    if (nat20 && critRule) output("You rolled a Natural 20!!!\nYou deal " + damage + " damage!");
-    else if (nat1 && critRule) output("You rolled a Natural 1.\nLoser.");
-    else if (success) output("You rolled a " + toHit + " which beats your enemy's " + ac + " Armor Class\nYou deal " + damage + " damage!");
-    else output("You rolled a " + toHit + " which misses your enemy's " + ac + " Armor Class");
-}
+//    if (nat20 && critRule) output("You rolled a Natural 20!!!\nYou deal " + damage + " damage!");
+//    else if (nat1 && critRule) output("You rolled a Natural 1.\nLoser.");
+//    else if (success) output("You rolled a " + toHit + " which beats your enemy's " + ac + " Armor Class\nYou deal " + damage + " damage!");
+//    else output("You rolled a " + toHit + " which misses your enemy's " + ac + " Armor Class");
+//}
+
+//function weapon(row, column) {
+//    var dmg = data["weapons"][1]["name"];
+//    var mod =;
+//    var ac = document.getElementById("AC").value;
+//    var critRule = document.getElementById("nat20").checked;
+//    var toHit = Math.floor((Math.random() * 20) + 1)
+//    var nat20 = false;
+//    var nat1 = false;
+//    var success;
+//    var damage;
+
+//    if (isNaN(ac) || ac == "") {
+//        alert("You must enter a valid Armor Class!");
+//        return;
+//    }
+
+//    if (toHit == 20) nat20 = true;
+//    else if (toHit == 1) nat1 = true;
+//    else toHit += mod;
+
+//    if (critRule && nat20) success = true;
+//    else if (toHit >= ac) success = true;
+//    else success = false;
+
+//    damage = dmg + mod;
+//    if (nat20) damage += dmg;
+
+//    if (nat20 && critRule) output("You rolled a Natural 20!!!\nYou deal " + damage + " damage!");
+//    else if (nat1 && critRule) output("You rolled a Natural 1.\nLoser.");
+//    else if (success) output("You rolled a " + toHit + " which beats your enemy's " + ac + " Armor Class\nYou deal " + damage + " damage!");
+//    else output("You rolled a " + toHit + " which misses your enemy's " + ac + " Armor Class");
+//}
 
 function greatsword(mod) {
     var ac = document.getElementById("AC").value;
