@@ -144,7 +144,7 @@ function createGrid(data) {
         }
         const column = document.createElement("div");
         column.classList.add("column");
-        column.style.backgroundColor = "red";
+        column.style.backgroundColor = "rgba(0,0,0," + i / 50 + ")";
 
         const par = document.createElement("p");
 
