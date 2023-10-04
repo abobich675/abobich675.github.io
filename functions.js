@@ -75,7 +75,7 @@ function attack(weapon) {
     var nat1 = false;
     var success;
     var damage;
-    var mod = getMod(weapons["weapons"][0]);
+    var mod = getMod(0);
 
     if (isNaN(ac) || ac == "") {
         alert("You must enter a valid Armor Class!");
@@ -128,7 +128,7 @@ function createGrid(data) {
 
 function refreshGrid() {
     var label = weapons["weapons"][0]["name"] + ": " + weapons["weapons"][0]["damage"]["count"] + "d" + weapons["weapons"][0]["damage"]["size"];
-    var mod = getMod(weapons["weapons"][0]);
+    var mod = getMod(0);
     output(mod);
     if (weapons["weapons"][0]["bonus"] != 0) mod += weapons["weapons"][0]["bonus"];
     label += " + " + mod;
@@ -137,7 +137,7 @@ function refreshGrid() {
 }
 
 function getMod(weapon) {
-    var modType = weapon["modifier"];
+    var modType = weapons["weapons"][0]["modifier"];
     var str = document.getElementById("str").value * 1;
     var dex = document.getElementById("dex").value * 1;
     var mod;
