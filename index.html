@@ -3,18 +3,28 @@
 
 <head>
     <link rel="stylesheet" href="style.css">
+    <link href="weapons.json">
     <script type="text/javascript" src="functions.js"></script>
-    <link href="savedWeapons.txt" rel="import" />
+
+
 </head>
 
 <body>
 
+
     <!--Page Head-->
 
     <h1>D&D Roll</h1>
-
-    <label for="AC">Enter your target's Armor Class in the field below:</label> <br />
-    <input type="text" id="AC" name="AC" placeholder="Armor Class">
+    <div class="row">
+        <div class="column">
+            <label for="AC">Enter your target's Armor Class in the field below:</label> <br />
+            <input type="text" id="AC" name="AC" placeholder="Armor Class">
+        </div>
+        <div class="column">
+            <label for="AC">Critical success/failure:</label> <br />
+            <input type="checkbox" id="nat20">
+        </div>
+    </div>
 
 
     <!--Start of all Roll Options-->
@@ -49,6 +59,7 @@
 
                     <p>Greataxe: 1d12 + 3</p>
                     <input type="button" onclick="weapon(roll(1,12),3)" value="Roll">
+                    <input type="button" onclick="getFile()" value="Roll">
 
                 </div>
             </div>
@@ -56,8 +67,8 @@
 
         <!--Feedback-->
 
-        <div class="column" style="max-width: 25%">
-            <div id="feedback" style="background-color: palegreen; padding-top: 15px; min-height: 60px; border: solid; border-color: green; border-width: 5px">Output:</div>
+        <div class="column" style="max-width: 25%; font-size:small;">
+            <div id="feedback" style="background-color: palegreen; padding: 15px; min-height: 60px; border: solid; border-color: green; border-width: 5px">Output:</div>
         </div>
 
 

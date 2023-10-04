@@ -1,0 +1,18 @@
+﻿{
+    "test": "hi",
+    "weapons": [
+        {
+            "name": "greatsword",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": [
+                {
+                    "count": 2,
+                    "size": 6
+                }
+            ]
+        }
+    ]
+
+}
+
