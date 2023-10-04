@@ -83,7 +83,7 @@ function greatsword(mod) {
 
 async function getFile() {
     
-    output(1);
+    output(2);
     console.log("hello");
 
 }
