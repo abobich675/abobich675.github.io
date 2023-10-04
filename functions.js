@@ -78,6 +78,7 @@ function attack(weapon) {
     var nat1 = false;
     var success;
     var damage;
+    var mod;
 
     if (isNaN(ac) || ac == "") {
         alert("You must enter a valid Armor Class!");
@@ -86,7 +87,7 @@ function attack(weapon) {
 
     if (modType == "strength") {
         if (isNaN(str) || str == "") alert("You must enter a valid strength modifier!");
-        else modType = str;
+        else mod = str;
     } else if (modType == "dexterity") {
         if (isNaN(dex) || dex == "") alert("You must enter a valid dexterity modifier!");
         else mod = dex;
