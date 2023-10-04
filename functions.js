@@ -75,7 +75,7 @@ function attack(weapon) {
     var nat1 = false;
     var success;
     var damage;
-    var mod = getMod();
+    var mod = getMod(weapons["weapons"][0]);
 
     if (isNaN(ac) || ac == "") {
         alert("You must enter a valid Armor Class!");
