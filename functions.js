@@ -66,7 +66,7 @@ function weapon(dmg, mod) {
 }
 
 function attack(weapon) {
-    var mod = weapons["weapons"][0]["modifier"];
+    var modType = weapons["weapons"][0]["modifier"];
     var str = document.getElementById("str").value;;
     var dex = document.getElementById("dex").value;;
     var count = weapons["weapons"][0]["damage"]["count"];
@@ -84,13 +84,13 @@ function attack(weapon) {
         return;
     }
 
-    if (weapons["weapons"][0]["modifier"] == "strength") {
+    if (modType == "strength") {
         if (isNaN(str) || str == "") alert("You must enter a valid strength modifier!");
-        else mod = str;
-    } else if ("weapons"][0]["modifier"] == "dexterity") {
+        else modType = str;
+    } else if (modType == "dexterity") {
         if (isNaN(dex) || dex == "") alert("You must enter a valid dexterity modifier!");
         else mod = dex;
-    } else if ("weapons"][0]["modifier"] == "finesse") {
+    } else if (modType == "finesse") {
         if (isNaN(str) || str == "" && isNaN(dex) || dex == "") alert("You must enter a valid strength or dexterity modifier!");
         else if (isNaN(str) || str == "") mod = dex;
         else if (isNaN(dex) || dex == "") mod = str;
@@ -137,10 +137,13 @@ function greatsword(mod) {
     } else { output("You rolled a " + toHit + " which misses your enemy's " + ac + " Armor Class"); }
 }
 
-function createGrid(data) {
+function initialize(data) {
     weapons = data;
+    refreshGrid();
+}
 
-    var label = data["weapons"][0]["name"] + ": " + data["weapons"][0]["damage"]["count"] + "d" + data["weapons"][0]["damage"]["size"];
-    if (data["weapons"][1]["bonus"] != 0) data += " + " + data["weapons"][1]["bonus"];
-    changeText('r1c1',label);
+function refreshGrid() {
+    var label = weapons["weapons"][0]["name"] + ": " + weapons["weapons"][0]["damage"]["count"] + "d" + weapons["weapons"][0]["damage"]["size"];
+    if (weapons["weapons"][1]["bonus"] != 0) weapons += " + " + weapons["weapons"][1]["bonus"];
+    changeText('r1c1', label);
 }
