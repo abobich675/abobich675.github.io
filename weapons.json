@@ -5,13 +5,10 @@
             "name": "Greatsword",
             "modifier": "strength",
             "bonus": 0,
-            "damage": [
-                {
-                    "count": 2,
-                    "size": 6
-                }
-
-            ]
+            "damage": {
+                "count": 2,
+                "size": 6
+            }
 
         },
         {
