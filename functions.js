@@ -67,8 +67,8 @@ function weapon(dmg, mod) {
 
 function attack(weapon) {
     var modType = weapons["weapons"][0]["modifier"];
-    var str = document.getElementById("str").value;
-    var dex = document.getElementById("dex").value;
+    var str = document.getElementById("str").value * 1;
+    var dex = document.getElementById("dex").value * 1;
     var count = weapons["weapons"][0]["damage"]["count"];
     var size = weapons["weapons"][0]["damage"]["size"];
     var ac = document.getElementById("AC").value;
