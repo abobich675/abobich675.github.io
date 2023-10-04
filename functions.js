@@ -67,6 +67,8 @@ function weapon(dmg, mod) {
 
 function attack(weapon) {
     var mod = weapons["weapons"][0]["modifier"];
+    var str = document.getElementById("str").value;;
+    var dex = document.getElementById("dex").value;;
     var count = weapons["weapons"][0]["damage"]["count"];
     var size = weapons["weapons"][0]["damage"]["size"];
     var ac = document.getElementById("AC").value;
@@ -79,6 +81,24 @@ function attack(weapon) {
 
     if (isNaN(ac) || ac == "") {
         alert("You must enter a valid Armor Class!");
+        return;
+    }
+
+    if (weapons["weapons"][0]["modifier"] == "strength") {
+        if (isNaN(str) || str == "") alert("You must enter a valid strength modifier!");
+        else mod = str;
+    } else if ("weapons"][0]["modifier"] == "dexterity") {
+        if (isNaN(dex) || dex == "") alert("You must enter a valid dexterity modifier!");
+        else mod = dex;
+    } else if ("weapons"][0]["modifier"] == "finesse") {
+        if (isNaN(str) || str == "" && isNaN(dex) || dex == "") alert("You must enter a valid strength or dexterity modifier!");
+        else if (isNaN(str) || str == "") mod = dex;
+        else if (isNaN(dex) || dex == "") mod = str;
+        else if (str >= dex) mod = str;
+        else if (dex > str) mod = dex;
+        else output("An error has occured (strength or dexterity score invalid)");
+    } else {
+        output("An error has occured (modifier named identified)");
         return;
     }
 
