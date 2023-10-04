@@ -123,16 +123,59 @@ function greatsword(mod) {
 
 function createGrid(data) {
     weapons = data;
-    for (let i = 0; i < weapons["weapons"].length; i++) {
-        var position = "r" + (Math.floor(i / columns) + 1) + "c" + ((i + 1) % columns);
-        console.log(position);
-        var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
-        if (weapons["weapons"][i]["bonus"] != 0) label += " + " + weapons["weapons"][i]["bonus"];
-        changeText(position, label);
-    }
+    //for (let i = 0; i < weapons["weapons"].length; i++) {
+    //    var position = "r" + (Math.floor(i / columns) + 1) + "c" + ((i + 1) % columns);
+    //    console.log(position);
+    //    var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
+    //    if (weapons["weapons"][i]["bonus"] != 0) label += " + " + weapons["weapons"][i]["bonus"];
+    //    changeText(position, label);
+    //}
     //var label = weapons["weapons"][0]["name"] + ": " + weapons["weapons"][0]["damage"]["count"] + "d" + weapons["weapons"][0]["damage"]["size"];
     //if (weapons["weapons"][0]["bonus"] != 0) label += " + " + weapons["weapons"][0]["bonus"];
     //changeText(position, label);
+
+    var row;
+
+    for (let i = 0; i < weapons["weapons"].length; i++) {
+
+        if (i % 3 == 0) {
+            row = document.createElement("div");
+            row.classList.add("row");
+        }
+        const column = document.createElement("div");
+        column.classList.add("column");
+        const node = document.createTextNode("hello" + i);
+        row.appendChild(column);
+        column.appendChild(node);
+
+        if (i % 3 == 0 || i + 1 == weapons["weapons"].length) {
+            document.getElementById('grid').appendChild(row);
+        }
+
+
+
+
+        //    const row = document.createElement("div");
+        //row.classList.add("row");
+        //const column = document.createElement("div");
+        //column.classList.add("column");
+        //const node = document.createTextNode("hello");
+        //row.appendChild(column);
+        //column.appendChild(node);
+
+        //var element = document.getElementById('grid');
+        //element.appendChild(row);
+
+
+
+
+        //var position = "r" + (Math.floor(i / columns) + 1) + "c" + ((i + 1) % columns);
+        //console.log(position);
+        //var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
+        //if (weapons["weapons"][i]["bonus"] != 0) label += " + " + weapons["weapons"][i]["bonus"];
+        //changeText(position, label);
+    }
+
 
     const row = document.createElement("div");
     row.classList.add("row");
