@@ -1,4 +1,6 @@
 var weapons;
+var rows = 1;
+var columns = 3;
 
 function roll(count, size) {
     var roll = 0;
@@ -121,9 +123,16 @@ function greatsword(mod) {
 
 function createGrid(data) {
     weapons = data;
-    var label = weapons["weapons"][0]["name"] + ": " + weapons["weapons"][0]["damage"]["count"] + "d" + weapons["weapons"][0]["damage"]["size"];
-    if (weapons["weapons"][0]["bonus"] != 0) label += " + " + weapons["weapons"][0]["bonus"];
-    changeText('r1c1', label);
+    for (let i = 0; i < weapons["weapons"].size(); i++) {
+        var position = "r" + toString(Math.floor(i / columns) + 1) + "c" + toString(i % columns);
+
+        var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
+        if (weapons["weapons"][i]["bonus"] != 0) label += " + " + weapons["weapons"][i]["bonus"];
+        changeText('r1c1', label);
+    }
+    //var label = weapons["weapons"][0]["name"] + ": " + weapons["weapons"][0]["damage"]["count"] + "d" + weapons["weapons"][0]["damage"]["size"];
+    //if (weapons["weapons"][0]["bonus"] != 0) label += " + " + weapons["weapons"][0]["bonus"];
+    changeText(position, label);
 }
 
 function refreshGrid() {
