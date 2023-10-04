@@ -88,8 +88,8 @@ function weapon(row, column) {
     else if (toHit >= ac) success = true;
     else success = false;
 
-    damage = roll(data["weapons"][1]["damage"]["count"], data["weapons"][1]["damage"]["size"]) + mod;
-    if (nat20) damage += dmg;
+    damage = roll(data["weapons"][0]["damage"]["count"], data["weapons"][0]["damage"]["size"]) + mod;
+    if (nat20) damage += roll(data["weapons"][0]["damage"]["count"], data["weapons"][0]["damage"]["size"]);
 
     if (nat20 && critRule) output("You rolled a Natural 20!!!\nYou deal " + damage + " damage!");
     else if (nat1 && critRule) output("You rolled a Natural 1.\nLoser.");
@@ -118,7 +118,7 @@ function greatsword(mod) {
 function createGrid(data) {
     weapons = data;
 
-    var label = data["weapons"][1]["name"] + ": " + data["weapons"][1]["damage"]["count"] + "d" + data["weapons"][1]["damage"]["size"];
+    var label = data["weapons"][0]["name"] + ": " + data["weapons"][0]["damage"]["count"] + "d" + data["weapons"][0]["damage"]["size"];
     if (data["weapons"][1]["bonus"] != 0) data += " + " + data["weapons"][1]["bonus"];
     changeText('r1c1',label);
 }
