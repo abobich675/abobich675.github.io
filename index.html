@@ -16,6 +16,7 @@
             .then(response => response.json())
             .then(data => {
                 console.log(data)
+                createGrid(data)
             })
     </script>
 
@@ -47,7 +48,7 @@
 
                 <div class="column" style="background-color:#aac;">
 
-                    <p>Customm</p>
+                    <p id="r1c1">Customm</p>
                     <input type="button" onclick="(weapon(roll(1,12),3))" value="Roll">
 
                 </div>
@@ -67,7 +68,6 @@
 
                     <p>Greataxe: 1d12 + 3</p>
                     <input type="button" onclick="weapon(roll(1,12),3)" value="Roll">
-                    <input type="button" onclick="getFile()" value="Roll">
 
                 </div>
             </div>
