@@ -123,7 +123,7 @@ function greatsword(mod) {
 
 function createGrid(data) {
     weapons = data;
-    for (let i = 0; i < weapons["weapons"].size(); i++) {
+    for (let i = 0; i < weapons["weapons"].length; i++) {
         var position = "r" + toString(Math.floor(i / columns) + 1) + "c" + toString(i % columns);
 
         var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
