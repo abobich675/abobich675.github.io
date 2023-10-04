@@ -125,7 +125,7 @@ function createGrid(data) {
     weapons = data;
     for (let i = 0; i < weapons["weapons"].length; i++) {
         var position = "r" + toString(Math.floor(i / columns) + 1) + "c" + toString(i % columns);
-
+        console.log(position);
         var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
         if (weapons["weapons"][i]["bonus"] != 0) label += " + " + weapons["weapons"][i]["bonus"];
         changeText(position, label);
