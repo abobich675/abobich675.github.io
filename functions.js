@@ -137,7 +137,7 @@ function greatsword(mod) {
     } else { output("You rolled a " + toHit + " which misses your enemy's " + ac + " Armor Class"); }
 }
 
-function initialize(data) {
+function createGrid(data) {
     weapons = data;
     refreshGrid();
 }
