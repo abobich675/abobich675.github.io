@@ -144,7 +144,12 @@ function createGrid(data) {
         }
         const column = document.createElement("div");
         column.classList.add("column");
-        const node = document.createTextNode("hello" + i);
+
+
+        var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
+        if (weapons["weapons"][i]["bonus"] != 0) label += " + " + weapons["weapons"][i]["bonus"];
+        const node = document.createTextNode(label);
+
         row.appendChild(column);
         column.appendChild(node);
 
@@ -175,19 +180,18 @@ function createGrid(data) {
         //var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
         //if (weapons["weapons"][i]["bonus"] != 0) label += " + " + weapons["weapons"][i]["bonus"];
         //changeText(position, label);
-    }
 
 
-    const row = document.createElement("div");
-    row.classList.add("row");
-    const column = document.createElement("div");
-    column.classList.add("column");
-    const node = document.createTextNode("hello");
-    row.appendChild(column);
-    column.appendChild(node);
+    //const row = document.createElement("div");
+    //row.classList.add("row");
+    //const column = document.createElement("div");
+    //column.classList.add("column");
+    //const node = document.createTextNode("hello");
+    //row.appendChild(column);
+    //column.appendChild(node);
 
-    var element = document.getElementById('grid');
-    element.appendChild(row);
+    //var element = document.getElementById('grid');
+    //element.appendChild(row);
 }
 
 function refreshGrid() {

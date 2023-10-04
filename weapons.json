@@ -1,6 +1,106 @@
 ﻿{
-    "update": "31",
+    "update": "32",
     "weapons": [
+        {
+            "name": "Club",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 4
+            }
+
+        },
+        {
+            "name": "Dagger",
+            "modifier": "finesse",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 4
+            }
+
+        },
+        {
+            "name": "Greatclub",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 8
+            }
+
+        },
+        {
+            "name": "Handaxe",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 6
+            }
+
+        },
+        {
+            "name": "Javelin",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 6
+            }
+
+        },
+        {
+            "name": "Light Hammer",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 4
+            }
+
+        },
+        {
+            "name": "Mace",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 6
+            }
+
+        },
+        {
+            "name": "Quarterstaff",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 6
+            }
+
+        },
+        {
+            "name": "Sickle",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 4
+            }
+
+        },
+        {
+            "name": "Spear",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 6
+            }
+
+        },
         {
             "name": "Greatsword",
             "modifier": "strength",
