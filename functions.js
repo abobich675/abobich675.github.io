@@ -129,8 +129,10 @@ function createGrid(data) {
 function refreshGrid() {
     var label = weapons["weapons"][0]["name"] + ": " + weapons["weapons"][0]["damage"]["count"] + "d" + weapons["weapons"][0]["damage"]["size"];
     var mod = getMod();
+    output(mod);
     if (weapons["weapons"][0]["bonus"] != 0) mod += weapons["weapons"][0]["bonus"];
-        label += " + " + mod;
+    label += " + " + mod;
+    output(label);
     changeText('r1c1', label);
 }
 
