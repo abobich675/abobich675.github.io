@@ -144,6 +144,9 @@ function createGrid(data) {
         }
         const column = document.createElement("div");
         column.classList.add("column");
+        column.style.backgroundColor = red;
+
+        const par = document.createElement("p");
 
 
         var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
@@ -151,7 +154,8 @@ function createGrid(data) {
         const node = document.createTextNode(label);
 
         row.appendChild(column);
-        column.appendChild(node);
+        column.appendChild(par);
+        par.appendChild(node);
 
         if (i % 3 == 0 || i + 1 == weapons["weapons"].length) {
             document.getElementById('grid').appendChild(row);
