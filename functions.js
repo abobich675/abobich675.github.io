@@ -66,9 +66,9 @@ function weapon(dmg, mod) {
 }
 
 function attack(weapon) {
-    var mod = data["weapons"][0]["modifier"];
-    var count = data["weapons"][0]["damage"]["count"];
-    var size = data["weapons"][0]["damage"]["size"];
+    var mod = weapons["weapons"][0]["modifier"];
+    var count = weapons["weapons"][0]["damage"]["count"];
+    var size = weapons["weapons"][0]["damage"]["size"];
     var ac = document.getElementById("AC").value;
     var critRule = document.getElementById("nat20").checked;
     var toHit = Math.floor((Math.random() * 20) + 1)
