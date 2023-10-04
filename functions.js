@@ -112,9 +112,11 @@ function attack(weapon) {
         return;
     }
 
-    if (toHit == 20) nat20 = true;
-    else if (toHit == 1) nat1 = true;
-    else toHit += mod;
+    if (critRule) {
+        if (toHit == 20) nat20 = true;
+        else if (toHit == 1) nat1 = true;
+        else toHit += mod;
+    }
 
     if (critRule && nat20) success = true;
     else if (toHit >= ac) success = true;
