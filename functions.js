@@ -151,6 +151,7 @@ function createGrid(data) {
         if (i % 3 == 0 || i + 1 == weapons["weapons"].length) {
             document.getElementById('grid').appendChild(row);
         }
+    }
 
 
 
