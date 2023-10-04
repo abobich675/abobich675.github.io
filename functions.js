@@ -128,11 +128,11 @@ function createGrid(data) {
 
         var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
         if (weapons["weapons"][i]["bonus"] != 0) label += " + " + weapons["weapons"][i]["bonus"];
-        changeText('r1c1', label);
+        changeText(position, label);
     }
     //var label = weapons["weapons"][0]["name"] + ": " + weapons["weapons"][0]["damage"]["count"] + "d" + weapons["weapons"][0]["damage"]["size"];
     //if (weapons["weapons"][0]["bonus"] != 0) label += " + " + weapons["weapons"][0]["bonus"];
-    changeText(position, label);
+    //changeText(position, label);
 }
 
 function refreshGrid() {
