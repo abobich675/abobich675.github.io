@@ -138,13 +138,13 @@ function createGrid(data) {
 
     for (let i = 0; i < weapons["weapons"].length; i++) {
 
-        if (i % 3 == 0) {
+        if (i % columns == 0) {
             row = document.createElement("div");
             row.classList.add("row");
         }
         const column = document.createElement("div");
         column.classList.add("column");
-        column.style.backgroundColor = "rgba(0,0,0," + i / 50 + ")";
+        column.style.backgroundColor = "rgba(0,0,0," + ((i % columns) * Math.floor(i/columns))/ 25 + ")";
 
         const par = document.createElement("p");
 
@@ -157,45 +157,10 @@ function createGrid(data) {
         column.appendChild(par);
         par.appendChild(node);
 
-        if (i % 3 == 0 || i + 1 == weapons["weapons"].length) {
+        if (i % columns == 0 || i + 1 == weapons["weapons"].length) {
             document.getElementById('grid').appendChild(row);
         }
     }
-
-
-
-
-        //    const row = document.createElement("div");
-        //row.classList.add("row");
-        //const column = document.createElement("div");
-        //column.classList.add("column");
-        //const node = document.createTextNode("hello");
-        //row.appendChild(column);
-        //column.appendChild(node);
-
-        //var element = document.getElementById('grid');
-        //element.appendChild(row);
-
-
-
-
-        //var position = "r" + (Math.floor(i / columns) + 1) + "c" + ((i + 1) % columns);
-        //console.log(position);
-        //var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
-        //if (weapons["weapons"][i]["bonus"] != 0) label += " + " + weapons["weapons"][i]["bonus"];
-        //changeText(position, label);
-
-
-    //const row = document.createElement("div");
-    //row.classList.add("row");
-    //const column = document.createElement("div");
-    //column.classList.add("column");
-    //const node = document.createTextNode("hello");
-    //row.appendChild(column);
-    //column.appendChild(node);
-
-    //var element = document.getElementById('grid');
-    //element.appendChild(row);
 }
 
 function refreshGrid() {
