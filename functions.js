@@ -1,3 +1,5 @@
+import * as fs from 'fs';
+
 var weapons;
 var rows = 1;
 var columns = 3;
@@ -144,7 +146,8 @@ function createGrid(data) {
         }
         const column = document.createElement("div");
         column.classList.add("column");
-        column.style.backgroundColor = "rgba(0,0,0," + (((i % columns) + 1) * Math.floor(i/columns + 1))/ 25 + ")";
+        column.style.backgroundColor = "rgba(0,0,0," + (((i % columns) + 1) * Math.floor(i / columns + 1) + 2) / 50 + ")";
+        column.style.top = "50%";
 
         const par = document.createElement("p");
 
