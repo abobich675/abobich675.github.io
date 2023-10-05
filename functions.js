@@ -1,5 +1,4 @@
 var weapons;
-var rows = 1;
 var columns = 3;
 
 function roll(count, size) {
@@ -145,9 +144,11 @@ function createGrid(data) {
         const column = document.createElement("div");
         column.classList.add("column");
         column.style.backgroundColor = "rgba(0,0,0," + (((i % columns) + 1) * Math.floor(i / columns + 1) + 2) / 50 + ")";
-        column.style.top = "50%";
+        column.style.verticalAlign = "middle";
+        column.onclick = "attack(" + i + ")";
 
         const par = document.createElement("p");
+        par.id = "gridSquare" + i;
 
 
         var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
