@@ -95,7 +95,7 @@ function attack(weapon) {
 
     damage = roll(count, size) + mod;
     if (nat20) damage += roll(count, size);
-    if (!(isNaN(toHit) || toHit == "") && !(isNaN(damage) || damage == "") && (isNaN(ac) || ac == "")) {
+    if (!(isNaN(toHit) || toHit == "") && !(isNaN(damage) || damage == "") && !(isNaN(ac) || ac == "")) {
         if (nat20 && critRule) output("You rolled a Natural 20!!!\nYou deal " + damage + " damage!");
         else if (nat1 && critRule) output("You rolled a Natural 1.\nLoser.");
         else if (success) output("You rolled a " + toHit + " which beats your enemy's " + ac + " Armor Class\nYou deal " + damage + " damage!");
