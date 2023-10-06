@@ -150,6 +150,10 @@ function createGrid(data) {
         const par = document.createElement("p");
         par.id = "gridSquare" + i;
 
+        const button = document.createElement("input");
+        button.type = "button";
+        button.onclick = "output(1)"
+
 
         var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
         if (weapons["weapons"][i]["bonus"] != 0) label += " + " + weapons["weapons"][i]["bonus"];
@@ -158,6 +162,8 @@ function createGrid(data) {
         row.appendChild(column);
         column.appendChild(par);
         par.appendChild(node);
+
+        column.appendChild(button);
 
         if (i % columns == 0 || i + 1 == weapons["weapons"].length) {
             document.getElementById('grid').appendChild(row);
