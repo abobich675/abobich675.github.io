@@ -1,5 +1,5 @@
 ﻿{
-    "update": "50",
+    "update": "51",
     "weapons": [
         {
             "name": "Club",
@@ -98,6 +98,16 @@
             "damage": {
                 "count": 1,
                 "size": 6
+            }
+
+        },
+        {
+            "name": "Light Crossbow",
+            "modifier": "dexterity",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 8
             }
 
         },

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <!--CounterXXVIII-->
+    <!--CounterXXIX-->
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="functions.js"></script>
     <script type="text/javascript" src="elements.js"></script>
@@ -46,10 +46,19 @@
             <input type="text" id="dex" name="dex" placeholder="Dexterity">
         </div>
 
+        <!--Advantage/Disadvantage-->
+
+        <div class="column">
+            <label for="advantage">Critical success/failure:</label> <br />
+            <input type="checkbox" id="disadvantageBox" onclick="advantageChanged(-1)">
+            <input type="checkbox" id="straightRollBox" onclick="advantageChanged(0)" checked>
+            <input type="checkbox" id="advantageBox" onclick="advantageChanged(1)">
+        </div>
+
         <!--Critical Success/Failure Rule-->
 
         <div class="column">
-            <label for="AC">Critical success/failure:</label> <br />
+            <label for="critRule">Critical success/failure:</label> <br />
             <input type="checkbox" id="nat20" checked>
         </div>
 
@@ -98,7 +107,7 @@
                 </div>
             </div>-->
 
-            <div id="grid" />
+            <div class="row" id="grid" />
 
         </div>
 

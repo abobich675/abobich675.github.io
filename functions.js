@@ -1,5 +1,5 @@
 var weapons;
-var columns = 2;
+var columns = 3;
 
 function roll(count, size) {
     var roll = 0;
@@ -71,7 +71,9 @@ function attack(weapon) {
     var size = weapons["weapons"][weapon]["damage"]["size"];
     var ac = document.getElementById("AC").value;
     var critRule = document.getElementById("nat20").checked;
-    var toHit = Math.floor((Math.random() * 20) + 1)
+    var toHit = Math.floor((Math.random() * 20) + 1);
+    //for testing
+    console.log("to hit: " + toHit);
     var nat20 = false;
     var nat1 = false;
     var success;
@@ -81,6 +83,20 @@ function attack(weapon) {
     if (isNaN(ac) || ac == "") {
         alert("You must enter a valid Armor Class!");
         return;
+    }
+
+    if (document.getElementById(disadvantageBox).checked) {
+        var disadvantage = Math.floor((Math.random() * 20) + 1);
+        if (disadvantage < toHit) toHit = disadvantage;
+        //for testing
+        console.log("disadvantage: " + disadvantage);
+    } else if (document.getElementById(advantageBox).checked) {
+        var advantage = Math.floor((Math.random() * 20) + 1);
+        if (advantage > toHit) toHit = disadvantage;
+        //for testing
+
+        console.log("advantage: " + advantage);
+
     }
 
     if (critRule) {
@@ -145,7 +161,7 @@ function createGrid(data) {
         }
         const column = document.createElement("div");
         column.classList.add("column");
-        column.style.backgroundColor = "rgba(0,0,0," + (((i % columns) + 1) * Math.floor(i / columns + 1) + 2) / 50 + ")";
+        column.style.backgroundColor = "rgba(0,0,0," + (((i + 1 ) % columns) * Math.floor(i + 1) / columns) + 2) / 50 + ")";
 
         const par = document.createElement("p");
         par.id = "gridSquare" + i;
@@ -197,17 +213,17 @@ function getMod(weapon) {
     var mod;
 
     if (modType == "strength") {
-        if (isNaN(str) || str == "") {
+        if (isNaN(str)) {
             alert("You must enter a valid strength modifier!");
             return;
         } else mod = str;
     } else if (modType == "dexterity") {
-        if (isNaN(dex) || dex == "") {
+        if (isNaN(dex)) {
             alert("You must enter a valid dexterity modifier!");
             return;
         } else mod = dex;
     } else if (modType == "finesse") {
-        if (isNaN(str) || str == "" && isNaN(dex) || dex == "") {
+        if (isNaN(str) && isNaN(dex)) {
             alert("You must enter a valid strength or dexterity modifier!");
             return;
         } else if (isNaN(str) || str == "") mod = dex;
@@ -222,7 +238,22 @@ function getMod(weapon) {
         output("An error has occured (modifier named identified)");
         return;
     }
+
+    if (mod == "") mod = 0;
     return mod;
+}
+
+function advantageChanged(setting) {
+    if (setting == -1) {
+        document.getElementById(straightRollBox).checked = false;
+        document.getElementById(advantageBox).checked = false;
+    } else if (setting == 0) {
+        document.getElementById(disadvantageBox).checked = false;
+        document.getElementById(advantageBox).checked = false;
+    } else if (setting == 1) {
+        document.getElementById(disadvantageBox).checked = false;
+        document.getElementById(straightRollBox).checked = false;
+    }
 }
 
 function testFunction() {
