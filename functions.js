@@ -1,5 +1,5 @@
 var weapons;
-var columns = 3;
+var columns = 4;
 
 function roll(count, size) {
     var roll = 0;
@@ -161,7 +161,7 @@ function createGrid(data) {
         }
         const column = document.createElement("div");
         column.classList.add("column");
-        //column.style.backgroundColor = "rgba(0,0,0," + (((i + 1 ) % columns) * Math.floor(i + 1) / columns) + 2) / 50 + ")";
+        column.style.backgroundColor = "rgba(0,0,0," + (((i + 1 ) % columns) * Math.floor(i + 1) / columns) + 2) / 50 + ")";
 
         const par = document.createElement("p");
         par.id = "gridSquare" + i;
