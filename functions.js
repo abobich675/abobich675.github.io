@@ -145,14 +145,15 @@ function createGrid(data) {
         column.classList.add("column");
         column.style.backgroundColor = "rgba(0,0,0," + (((i % columns) + 1) * Math.floor(i / columns + 1) + 2) / 50 + ")";
         column.style.verticalAlign = "middle";
-        column.onclick = "attack(" + i + ")";
+
+        column.onclick = function () { attack(i) };
 
         const par = document.createElement("p");
         par.id = "gridSquare" + i;
 
         const button = document.createElement("input");
         button.type = "button";
-        button.onclick = "output(1)";
+        button.onclick = function () { output(1) };
 
 
         var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
