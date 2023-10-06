@@ -152,7 +152,7 @@ function createGrid(data) {
 
         const button = document.createElement("input");
         button.type = "button";
-        button.onclick = "output(1)"
+        button.onclick = "output(1)";
 
 
         var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
