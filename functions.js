@@ -95,11 +95,13 @@ function attack(weapon) {
 
     damage = roll(count, size) + mod;
     if (nat20) damage += roll(count, size);
-
-    if (nat20 && critRule) output("You rolled a Natural 20!!!\nYou deal " + damage + " damage!");
-    else if (nat1 && critRule) output("You rolled a Natural 1.\nLoser.");
-    else if (success) output("You rolled a " + toHit + " which beats your enemy's " + ac + " Armor Class\nYou deal " + damage + " damage!");
-    else output("You rolled a " + toHit + " which misses your enemy's " + ac + " Armor Class");
+    if (!(isNaN(toHit) || toHit == "") && !(isNaN(damage) || damage == "") && (isNaN(ac) || ac == "")) {
+        if (nat20 && critRule) output("You rolled a Natural 20!!!\nYou deal " + damage + " damage!");
+        else if (nat1 && critRule) output("You rolled a Natural 1.\nLoser.");
+        else if (success) output("You rolled a " + toHit + " which beats your enemy's " + ac + " Armor Class\nYou deal " + damage + " damage!");
+        else output("You rolled a " + toHit + " which misses your enemy's " + ac + " Armor Class");
+    }
+    
 }
 
 function greatsword(mod) {
@@ -144,16 +146,11 @@ function createGrid(data) {
         const column = document.createElement("div");
         column.classList.add("column");
         column.style.backgroundColor = "rgba(0,0,0," + (((i % columns) + 1) * Math.floor(i / columns + 1) + 2) / 50 + ")";
-        column.style.verticalAlign = "middle";
-
         column.onclick = function () { attack(i) };
 
         const par = document.createElement("p");
         par.id = "gridSquare" + i;
-
-        const button = document.createElement("input");
-        button.type = "button";
-        button.onclick = function () { output(1) };
+        par.style.verticalAlign = "middle";
 
 
         var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
@@ -163,8 +160,6 @@ function createGrid(data) {
         row.appendChild(column);
         column.appendChild(par);
         par.appendChild(node);
-
-        column.appendChild(button);
 
         if (i % columns == 0 || i + 1 == weapons["weapons"].length) {
             document.getElementById('grid').appendChild(row);
