@@ -1,5 +1,5 @@
 var weapons;
-var columns = 4;
+var columns = 2;
 
 function roll(count, size) {
     var roll = 0;
@@ -162,6 +162,7 @@ function createGrid(data) {
 
         row.appendChild(column);
         column.appendChild(par);
+        column.appendChild(button);
         par.appendChild(node);
 
         if (i % columns == 0 || i + 1 == weapons["weapons"].length) {
