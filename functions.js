@@ -1,5 +1,5 @@
 var weapons;
-var columns = 3;
+var columns = 4;
 
 function roll(count, size) {
     var roll = 0;
@@ -146,11 +146,14 @@ function createGrid(data) {
         const column = document.createElement("div");
         column.classList.add("column");
         column.style.backgroundColor = "rgba(0,0,0," + (((i % columns) + 1) * Math.floor(i / columns + 1) + 2) / 50 + ")";
-        column.onclick = function () { attack(i) };
 
         const par = document.createElement("p");
         par.id = "gridSquare" + i;
-        par.style.verticalAlign = "middle";
+
+        const button = document.createElement("input");
+        button.type = "button";
+        button.onclick = function () { attack(i) };
+        button.value = "Roll";
 
 
         var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
@@ -168,16 +171,22 @@ function createGrid(data) {
 }
 
 function refreshGrid() {
-    var label = weapons["weapons"][0]["name"] + ": " + weapons["weapons"][0]["damage"]["count"] + "d" + weapons["weapons"][0]["damage"]["size"];
-    var mod = getMod(0);
 
-    if (isNaN(mod) || mod == "") {
-        if (weapons["weapons"][0]["bonus"] != 0) label += " + " + weapons["weapons"][0]["bonus"];
-    } else {
-        if (weapons["weapons"][0]["bonus"] != 0) mod += weapons["weapons"][0]["bonus"];
-        label += " + " + mod;
+    for (let i = 0; i < weapons["weapons"].length; i++) {
+        var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
+        var mod = getMod(i);
+
+        if (isNaN(mod) || mod == "") {
+            if (weapons["weapons"][i]["bonus"] != 0) label += " + " + weapons["weapons"][i]["bonus"];
+        } else {
+            if (weapons["weapons"][i]["bonus"] != 0) mod += weapons["weapons"][i]["bonus"];
+            label += " + " + mod;
+        }
+        changeText('gridSquare' + i, label);
     }
-    changeText('r1c1', label);
+    
+
+    
 }
 
 function getMod(weapon) {
