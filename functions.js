@@ -38,40 +38,6 @@ function output(text) {
     addText('feedback', text);
 }
 
-
-
-//Legacy "Weapon Attack" Function
-function weapon(dmg, mod) {
-    var ac = document.getElementById("AC").value;
-    var critRule = document.getElementById("nat20").checked;
-    var toHit = Math.floor((Math.random() * 20) + 1)
-    var nat20 = false;
-    var nat1 = false;
-    var success;
-    var damage;
-
-    if (isNaN(ac) || ac == "") {
-        alert("You must enter a valid Armor Class!");
-        return;
-    }
-
-    if (toHit == 20) nat20 = true;
-    else if (toHit == 1) nat1 = true;
-    else toHit += mod;
-
-    if (critRule && nat20) success = true;
-    else if (toHit >= ac) success = true;
-    else success = false;
-
-    damage = dmg + mod;
-    if (nat20) damage += dmg;
-
-    if (nat20 && critRule) output("You rolled a Natural 20!!!\nYou deal " + damage + " damage!");
-    else if (nat1 && critRule) output("You rolled a Natural 1.\nLoser.");
-    else if (success) output("You rolled a " + toHit + " which beats your enemy's " + ac + " Armor Class\nYou deal " + damage + " damage!");
-    else output("You rolled a " + toHit + " which misses your enemy's " + ac + " Armor Class");
-}
-
 //Performs an attack for a given parameter weapon in the form of an index to a "weapon" from the data.json file
 function attack(weapon) {
     var count = weapons["weapons"][weapon]["damage"]["count"];
@@ -128,26 +94,6 @@ function attack(weapon) {
     
 }
 
-
-//Legacy greatsword attack
-function greatsword(mod) {
-    var ac = document.getElementById("AC").value;
-    if (isNaN(ac) || ac == "") {
-        alert("You must enter a valid Armor Class!");
-        return;
-    }
-    var toHit = Math.floor((Math.random() * 20) + 1) + mod;
-    if (toHit >= ac) {
-        var success = true;
-    } else var success = false;
-
-    var damage = roll(2,6) + mod;
-
-    if (success) {
-        output("You rolled a " + toHit + " which beats your enemy's " + ac + " Armor Class\nYou deal " + damage + " damage!");
-    } else { output("You rolled a " + toHit + " which misses your enemy's " + ac + " Armor Class"); }
-}
-
 //Called once upon initialization. Creates a grid of weapons based on data parameter. Initializes "weapons" variable for use in all other functions
 function createGrid(data) {
     weapons = data;
@@ -163,9 +109,9 @@ function createGrid(data) {
         column.classList.add("column");
 
         //column.style.backgroundColor = "rgba(0,0,0," + ((i % columns) + 1) * ((Math.floor(i / columns) + 1) + 2) / 50 + ")";
-        var red = Math.floor(i / columns) * 20;
-        var green = (i % columns) * 20;
-        var blue = (red + 1) * (green + 1);
+        var red = (Math.floor(i / columns) + 1) * 20;
+        var green = ((i % columns) + 1) * 20;
+        var blue = (red) * (green) / 20;
         column.style.backgroundColor = "rgba(" + red + "," + green + "," + blue + ", 0.2)";
 
         const par = document.createElement("p");
