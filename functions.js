@@ -1,7 +1,7 @@
 //Variable Creation
 
 var weapons;
-var columns = 4;
+var columns = 3;
 
 function roll(count, size) {
     var roll = 0;
@@ -120,7 +120,7 @@ function createGrid(data) {
         else var alpha = 0.4;
         column.style.backgroundColor = "rgba(" + red + "," + green + "," + blue + "," + alpha + ")";
 
-        if (!isNaN(weapons["weapons"][i])) {
+        if (weapons["weapons"][i].isArray()) {
             const par = document.createElement("p");
             par.id = "gridSquare" + i;
 
