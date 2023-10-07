@@ -85,12 +85,12 @@ function attack(weapon) {
         return;
     }
 
-    if (document.getElementById(disadvantageBox).checked) {
+    if (document.getElementById("disadvantageBox").checked) {
         var disadvantage = Math.floor((Math.random() * 20) + 1);
         if (disadvantage < toHit) toHit = disadvantage;
         //for testing
         console.log("disadvantage: " + disadvantage);
-    } else if (document.getElementById(advantageBox).checked) {
+    } else if (document.getElementById("advantageBox").checked) {
         var advantage = Math.floor((Math.random() * 20) + 1);
         if (advantage > toHit) toHit = disadvantage;
         //for testing

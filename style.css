@@ -16,7 +16,7 @@
     text-align: center;
 }
 
-button {
+.button {
     position: absolute;
     top: 40%;
     left: 40%;
@@ -32,7 +32,7 @@ button {
     box-shadow: inset 0 0 30px rgb(97, 96, 96);
 }
 
-    button::before {
+    .button::before {
         content: "";
         position: absolute;
         top: 0;
@@ -44,11 +44,11 @@ button {
         transform: skewX(-15deg);
     }
 
-    button:hover::before {
+    .button:hover::before {
         left: 190px;
     }
 
-    button::after {
+    .button::after {
         content: "";
         position: absolute;
         top: 0;
@@ -60,6 +60,6 @@ button {
         transform: skewX(-15deg);
     }
 
-    button:hover::after {
+    .button:hover::after {
         left: 190px;
     } 
