@@ -98,9 +98,11 @@ function attack(weapon) {
 function createGrid(data) {
     weapons = data;
     var row;
+    var gridCells = weapons["weapons"].length;
+    while (gridCells % columns != 0) gridCells += 1;
 
-    for (let i = 0; i < weapons["weapons"].length; i++) {
-
+    for (let i = 0; i < gridCells; i++) {
+        
         if (i % columns == 0) {
             row = document.createElement("div");
             row.classList.add("row");
@@ -118,25 +120,27 @@ function createGrid(data) {
         else var alpha = 0.4;
         column.style.backgroundColor = "rgba(" + red + "," + green + "," + blue + "," + alpha + ")";
 
-        const par = document.createElement("p");
-        par.id = "gridSquare" + i;
+        if (!isNaN(weapons["weapons"][i])) {
+            const par = document.createElement("p");
+            par.id = "gridSquare" + i;
 
-        const button = document.createElement("input");
-        button.type = "button";
-        button.onclick = function () { attack(i) };
-        button.value = "Roll";
+            const button = document.createElement("input");
+            button.type = "button";
+            button.onclick = function () { attack(i) };
+            button.value = "Roll";
 
 
-        var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
-        if (weapons["weapons"][i]["bonus"] != 0) label += " + " + weapons["weapons"][i]["bonus"];
-        const node = document.createTextNode(label);
+            var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
+            if (weapons["weapons"][i]["bonus"] != 0) label += " + " + weapons["weapons"][i]["bonus"];
+            const node = document.createTextNode(label);
 
-        row.appendChild(column);
-        column.appendChild(par);
-        column.appendChild(button);
-        par.appendChild(node);
+            row.appendChild(column);
+            column.appendChild(par);
+            column.appendChild(button);
+            par.appendChild(node);
+        } else row.appendChild(column);
 
-        if (i % columns == 0 || i + 1 == weapons["weapons"].length) {
+        if (i % columns == 0) {
             document.getElementById('grid').appendChild(row);
         }
     }
