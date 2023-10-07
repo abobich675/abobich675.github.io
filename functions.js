@@ -245,14 +245,14 @@ function getMod(weapon) {
 
 function advantageChanged(setting) {
     if (setting == -1) {
-        document.getElementById(straightRollBox).checked = false;
-        document.getElementById(advantageBox).checked = false;
+        document.getElementById("straightRollBox").checked = false;
+        document.getElementById("advantageBox").checked = false;
     } else if (setting == 0) {
-        document.getElementById(disadvantageBox).checked = false;
-        document.getElementById(advantageBox).checked = false;
+        document.getElementById("disadvantageBox").checked = false;
+        document.getElementById("advantageBox").checked = false;
     } else if (setting == 1) {
-        document.getElementById(disadvantageBox).checked = false;
-        document.getElementById(straightRollBox).checked = false;
+        document.getElementById("disadvantageBox").checked = false;
+        document.getElementById("straightRollBox").checked = false;
     }
 }
 
