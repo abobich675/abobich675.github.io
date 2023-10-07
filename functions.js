@@ -92,7 +92,7 @@ function attack(weapon) {
         console.log("disadvantage: " + disadvantage);
     } else if (document.getElementById("advantageBox").checked) {
         var advantage = Math.floor((Math.random() * 20) + 1);
-        if (advantage > toHit) toHit = disadvantage;
+        if (advantage > toHit) toHit = advantage;
         //for testing
 
         console.log("advantage: " + advantage);
@@ -162,7 +162,12 @@ function createGrid(data) {
         }
         const column = document.createElement("div");
         column.classList.add("column");
-        column.style.backgroundColor = "rgba(0,0,0," + ((i % columns) + 1) * ((Math.floor(i / columns) + 1) + 2) / 50 + ")";
+
+        //column.style.backgroundColor = "rgba(0,0,0," + ((i % columns) + 1) * ((Math.floor(i / columns) + 1) + 2) / 50 + ")";
+        var red = Math.floor(i / columns) * 10;
+        var green = (i % columns) * 10;
+        var blue = (red + 1) * (green + 1);
+        column.style.backgroundColor = "rgba(" + red + "," + green + "," + blue + ", 0.1)";
 
         const par = document.createElement("p");
         par.id = "gridSquare" + i;
