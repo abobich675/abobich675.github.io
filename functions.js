@@ -109,10 +109,12 @@ function createGrid(data) {
         column.classList.add("column");
 
         //column.style.backgroundColor = "rgba(0,0,0," + ((i % columns) + 1) * ((Math.floor(i / columns) + 1) + 2) / 50 + ")";
-        var red = (Math.floor(i / columns) + 1) * 20;
-        var green = ((i % columns) + 1) * 20;
-        var blue = (red) * (green) / 20;
-        column.style.backgroundColor = "rgba(" + red + "," + green + "," + blue + ", 0.2)";
+        var red = (columns - ((i % columns) + 1)) * 20; 
+        var green = 0; //(Math.floor(i / columns) + 1) * 20;
+        var blue = ((i % columns) + 1) * 20; // (red) * (green) / 20;
+        if (((Math.floor(i / columns) + 1) + ((i + 1) % columns)) % 2 == 0) var alpha = 0.2;
+        else var alpha = 0.4;
+        column.style.backgroundColor = "rgba(" + red + "," + green + "," + blue + "," + alpha + ")";
 
         const par = document.createElement("p");
         par.id = "gridSquare" + i;
