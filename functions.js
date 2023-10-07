@@ -1,3 +1,5 @@
+//Variable Creation
+
 var weapons;
 var columns = 4;
 
@@ -20,6 +22,8 @@ function changeText(element, text) {
 //    element.innerHTML += "<br>" + text;
 //}
 
+
+//Extends a parameter element with a paragraph of parameter text
 function addText(element, text) {
     const para = document.createElement("p");
     const node = document.createTextNode(text);
@@ -29,12 +33,14 @@ function addText(element, text) {
     element.appendChild(para);
 }
 
-
+//Displays a string parameter to the output/feedback box
 function output(text) {
     addText('feedback', text);
 }
 
 
+
+//Legacy "Weapon Attack" Function
 function weapon(dmg, mod) {
     var ac = document.getElementById("AC").value;
     var critRule = document.getElementById("nat20").checked;
@@ -66,6 +72,7 @@ function weapon(dmg, mod) {
     else output("You rolled a " + toHit + " which misses your enemy's " + ac + " Armor Class");
 }
 
+//Performs an attack for a given parameter weapon in the form of an index to a "weapon" from the data.json file
 function attack(weapon) {
     var count = weapons["weapons"][weapon]["damage"]["count"];
     var size = weapons["weapons"][weapon]["damage"]["size"];
@@ -121,6 +128,8 @@ function attack(weapon) {
     
 }
 
+
+//Legacy greatsword attack
 function greatsword(mod) {
     var ac = document.getElementById("AC").value;
     if (isNaN(ac) || ac == "") {
@@ -139,19 +148,9 @@ function greatsword(mod) {
     } else { output("You rolled a " + toHit + " which misses your enemy's " + ac + " Armor Class"); }
 }
 
+//Called once upon initialization. Creates a grid of weapons based on data parameter. Initializes "weapons" variable for use in all other functions
 function createGrid(data) {
     weapons = data;
-    //for (let i = 0; i < weapons["weapons"].length; i++) {
-    //    var position = "r" + (Math.floor(i / columns) + 1) + "c" + ((i + 1) % columns);
-    //    console.log(position);
-    //    var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
-    //    if (weapons["weapons"][i]["bonus"] != 0) label += " + " + weapons["weapons"][i]["bonus"];
-    //    changeText(position, label);
-    //}
-    //var label = weapons["weapons"][0]["name"] + ": " + weapons["weapons"][0]["damage"]["count"] + "d" + weapons["weapons"][0]["damage"]["size"];
-    //if (weapons["weapons"][0]["bonus"] != 0) label += " + " + weapons["weapons"][0]["bonus"];
-    //changeText(position, label);
-
     var row;
 
     for (let i = 0; i < weapons["weapons"].length; i++) {
@@ -164,10 +163,10 @@ function createGrid(data) {
         column.classList.add("column");
 
         //column.style.backgroundColor = "rgba(0,0,0," + ((i % columns) + 1) * ((Math.floor(i / columns) + 1) + 2) / 50 + ")";
-        var red = Math.floor(i / columns) * 10;
-        var green = (i % columns) * 10;
+        var red = Math.floor(i / columns) * 20;
+        var green = (i % columns) * 20;
         var blue = (red + 1) * (green + 1);
-        column.style.backgroundColor = "rgba(" + red + "," + green + "," + blue + ", 0.1)";
+        column.style.backgroundColor = "rgba(" + red + "," + green + "," + blue + ", 0.2)";
 
         const par = document.createElement("p");
         par.id = "gridSquare" + i;
@@ -193,6 +192,8 @@ function createGrid(data) {
     }
 }
 
+
+//Refreshes the labels of all weapons in the grid. Used to update after changes are made to modifiers
 function refreshGrid() {
 
     for (let i = 0; i < weapons["weapons"].length; i++) {
@@ -212,6 +213,7 @@ function refreshGrid() {
     
 }
 
+//Returns a weapons modifier based on whether the weapon is labeled to use strength, dexterity, or finesse
 function getMod(weapon) {
     var modType = weapons["weapons"][weapon]["modifier"];
     var str = document.getElementById("str").value * 1;
@@ -249,6 +251,7 @@ function getMod(weapon) {
     return mod;
 }
 
+//Unchecks other boxes when a advantage setting is selected
 function advantageChanged(setting) {
     if (setting == -1) {
         document.getElementById("straightRollBox").checked = false;
@@ -262,5 +265,6 @@ function advantageChanged(setting) {
     }
 }
 
+//Used exclusively for testing new function ideas
 function testFunction() {
 }
