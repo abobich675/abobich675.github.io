@@ -98,6 +98,7 @@ function attack(weapon) {
         console.log("advantage: " + advantage);
 
     }
+    console.log("final toHit: " + toHit);
 
     if (critRule) {
         if (toHit == 20) nat20 = true;
