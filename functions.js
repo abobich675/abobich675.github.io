@@ -109,10 +109,12 @@ function createGrid(data) {
         column.classList.add("column");
 
         //column.style.backgroundColor = "rgba(0,0,0," + ((i % columns) + 1) * ((Math.floor(i / columns) + 1) + 2) / 50 + ")";
-        var red = (columns - ((i % columns) + 1)) * 20; 
+        var multiplier = 160 / columns;
+        var red = (columns - ((i % columns) + 1)) * multiplier; 
         var green = 0; //(Math.floor(i / columns) + 1) * 20;
-        var blue = ((i % columns) + 1) * 20; // (red) * (green) / 20;
-        if (((Math.floor(i / columns) + 1) + ((i + 1) % columns)) % 2 == 0) var alpha = 0.2;
+        // multiplier*columns-Abs(red-blue)
+        var blue = ((i % columns) + 1) * multiplier; // (red) * (green) / 20;
+        if (((Math.floor(i / columns) + 1) + ((i + 1) % columns)) % 2 == 0) var alpha = 0.3;
         else var alpha = 0.4;
         column.style.backgroundColor = "rgba(" + red + "," + green + "," + blue + "," + alpha + ")";
 
