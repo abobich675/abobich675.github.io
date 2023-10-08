@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <!--CounterXXXXVII-->
+    <!--CounterXXXXVIII-->
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="functions.js"></script>
     <script type="text/javascript" src="elements.js"></script>
@@ -23,7 +23,9 @@
     <!--Page Head-->
 
     <h1>D&D Roll</h1>
-    <div class="row" style="border-block-end: 5px solid lightsalmon; padding-bottom: 0px">
+
+    <!--First row of headers-->
+    <div class="row">
 
         <!--Armor Class Field-->
 
@@ -57,14 +59,18 @@
                 </div>
                 <div class="column" style="padding: 0px">
                     <label for="straightRoll">Straight Roll:</label> <br />
-                    <input type="checkbox" id="straightRollBox" onclick="advantageChanged(0)" checked>
+                    <input type="checkbox" id="straightRollBox" onclick="advantageChanged(0)" style="accent-color: #DD3E3E" checked>
                 </div>
                 <div class="column" style="padding: 0px">
                     <label for="advantage">Advantage:</label> <br />
-                    <input type="checkbox" id="advantageBox" onclick="advantageChanged(1)">
+                    <input type="checkbox" id="advantageBox" onclick="advantageChanged(1)" style="accent-color: #DD3E3E">
                 </div>
             </div>
+        </div>
 
+        <!--Second Row of Headers-->
+        <div class="row" style="border-block-end: 5px solid lightsalmon; padding-bottom: 0px">
+                
             <!--Critical Success/Failure Rule-->
 
             <div class="column">
