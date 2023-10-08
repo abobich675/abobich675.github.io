@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url("1.jpg");
+    background-image: url("bgIMG/1.jpg");
     background-attachment: fixed;
     background-size: cover;
 }
@@ -25,4 +25,8 @@ body {
 
 label {
     font-size: 12px;
+}
+
+input {
+    accent-color: #DD3E3E;
 }

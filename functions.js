@@ -3,6 +3,15 @@
 var weapons;
 var columns = 5;
 
+function startup() {
+    fetch("data.json")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            createGrid(data);
+        })
+}
+
 function roll(count, size) {
     var roll = 0;
     for (let i = 0; i < count; i++) {
