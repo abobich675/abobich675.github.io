@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <!--CounterLII-->
+    <!--CounterLIII-->
 
     <title>D&D Roll: Dungeons and Dragons dice automated</title>
     <link rel="stylesheet" href="style.css">
@@ -22,7 +22,7 @@
 <body>
 
     <div class="row">
-        <div class="column" style="max-width: 10%" />
+        <div class="column" style="max-width: 10%"></div>
         <div class="column" style="background-color: rgba(255,255,255,0.75)">
             <!--Page Head-->
 
@@ -62,31 +62,27 @@
                             <input type="checkbox" id="disadvantageBox" onclick="advantageChanged(-1)" style="accent-color: #DD3E3E">
                         </div>
                         <div class="column" style="padding: 0px">
-                            <label for="straightRoll">Straight Roll:</label> <br />
-                            <input type="checkbox" id="straightRollBox" onclick="advantageChanged(0)" style="accent-color: #DD3E3E" checked>
-                        </div>
-                        <div class="column" style="padding: 0px">
                             <label for="advantage">Advantage:</label> <br />
                             <input type="checkbox" id="advantageBox" onclick="advantageChanged(1)" style="accent-color: #DD3E3E">
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!--Second Row of Headers-->
-                <div class="row" style="border-block-end: 5px solid lightsalmon; padding-bottom: 0px">
+            <!--Second Row of Headers-->
+            <div class="row" style="border-block-end: 5px solid lightsalmon; padding-bottom: 0px">
 
-                    <!--Critical Success/Failure Rule-->
+                <!--Critical Success/Failure Rule-->
 
-                    <div class="column">
-                        <label for="critRule">Critical success/failure:</label> <br />
-                        <input type="checkbox" id="nat20" checked>
-                    </div>
+                <div class="column">
+                    <label for="critRule">Critical success/failure:</label> <br />
+                    <input type="checkbox" id="nat20" checked>
+                </div>
 
-                    <!--Refresh Grid Button-->
+                <!--Refresh Grid Button-->
 
-                    <div class="column">
-                        <input type="button" onclick="refreshGrid()" value="Refresh Grid">
-                    </div>
+                <div class="column">
+                    <input type="button" onclick="refreshGrid()" value="Refresh Grid">
                 </div>
             </div>
 
@@ -106,7 +102,7 @@
                 </div>
             </div>
         </div>
-        <div class="column" style="max-width: 10%" />
+        <div class="column" style="max-width: 10%"></div>
     </div>
 
 

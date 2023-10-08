@@ -207,16 +207,8 @@ function getMod(weapon) {
 
 //Unchecks other boxes when a advantage setting is selected
 function advantageChanged(setting) {
-    if (setting == -1) {
-        document.getElementById("straightRollBox").checked = false;
-        document.getElementById("advantageBox").checked = false;
-    } else if (setting == 0) {
-        document.getElementById("disadvantageBox").checked = false;
-        document.getElementById("advantageBox").checked = false;
-    } else if (setting == 1) {
-        document.getElementById("disadvantageBox").checked = false;
-        document.getElementById("straightRollBox").checked = false;
-    }
+    if (setting == -1) document.getElementById("advantageBox").checked = false;
+    else if (setting == 1) document.getElementById("disadvantageBox").checked = false;
 }
 
 //Used exclusively for testing new function ideas
