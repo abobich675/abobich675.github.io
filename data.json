@@ -1,5 +1,5 @@
 ﻿{
-    "update": "91",
+    "update": "92",
     "weapons": [
         {
             "name": "Club",
@@ -118,6 +118,156 @@
             "damage": {
                 "count": 2,
                 "size": 6
+            }
+
+        },
+        {
+            "name": "Greataxe",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 12
+            }
+
+        },
+        {
+            "name": "Greataxe",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 12
+            }
+
+        },
+        {
+            "name": "Greataxe",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 12
+            }
+
+        },
+        {
+            "name": "Greataxe",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 12
+            }
+
+        },
+        {
+            "name": "Greataxe",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 12
+            }
+
+        },
+        {
+            "name": "Greataxe",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 12
+            }
+
+        },
+        {
+            "name": "Greataxe",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 12
+            }
+
+        },
+        {
+            "name": "Greataxe",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 12
+            }
+
+        },
+        {
+            "name": "Greataxe",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 12
+            }
+
+        },
+        {
+            "name": "Greataxe",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 12
+            }
+
+        },
+        {
+            "name": "Greataxe",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 12
+            }
+
+        },
+        {
+            "name": "Greataxe",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 12
+            }
+
+        },
+        {
+            "name": "Greataxe",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 12
+            }
+
+        },
+        {
+            "name": "Greataxe",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 12
+            }
+
+        },
+        {
+            "name": "Greataxe",
+            "modifier": "strength",
+            "bonus": 0,
+            "damage": {
+                "count": 1,
+                "size": 12
             }
 
         },

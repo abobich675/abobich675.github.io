@@ -1,7 +1,7 @@
 //Variable Creation
 
 var weapons;
-var columns = 5;
+var columns = 3;
 
 function startup() {
     console.log("startup");
