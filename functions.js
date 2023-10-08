@@ -4,7 +4,7 @@ var weapons;
 var columns = 5;
 
 function startup() {
-    console.log("startup")
+    console.log("startup");
     fetch("data.json")
         .then(response => response.json())
         .then(data => {
