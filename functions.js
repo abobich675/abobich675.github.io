@@ -68,6 +68,7 @@ function createGrid() {
         if (i % columns == 0) {
             document.getElementById('grid').appendChild(row);
         }
+        console.log("weapon " + i + " added to grid");
     }
 }
 
