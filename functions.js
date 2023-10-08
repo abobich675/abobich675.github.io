@@ -1,7 +1,7 @@
 //Variable Creation
 
 var weapons;
-var columns = 3;
+var columns = 5;
 
 function roll(count, size) {
     var roll = 0;
@@ -116,8 +116,8 @@ function createGrid(data) {
         var green = 0; //(Math.floor(i / columns) + 1) * 20;
         // multiplier*columns-Abs(red-blue)
         var blue = ((i % columns) + 1) * multiplier; // (red) * (green) / 20;
-        if (((Math.floor(i / columns) + 1) + ((i + 1) % columns)) % 2 == 0) var alpha = 0.3;
-        else var alpha = 0.4;
+        if (((Math.floor(i / columns) + 1) + ((i + 1) % columns)) % 2 == 0) var alpha = 0.6;
+        else var alpha = 0.7;
         column.style.backgroundColor = "rgba(" + red + "," + green + "," + blue + "," + alpha + ")";
 
         if (weapons["weapons"][i]) {
