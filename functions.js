@@ -173,6 +173,7 @@ function attack(weapon) {
         if (nat20 && critRule) output("You rolled a Natural 20!!!\nYou deal " + damage + " damage!");
         else if (nat1 && critRule) output("You rolled a Natural 1.\nLoser.");
         else output("You rolled a " + toHit + ". \nYou deal " + damage + " damage!");
+    }
     
 }
 
@@ -218,8 +219,4 @@ function getMod(weapon) {
 function advantageChanged(setting) {
     if (setting == -1) document.getElementById("advantageBox").checked = false;
     else if (setting == 1) document.getElementById("disadvantageBox").checked = false;
-}
-
-//Used exclusively for testing new function ideas
-function testFunction() {
 }
