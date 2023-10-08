@@ -224,3 +224,15 @@ function advantageChanged(setting) {
     if (setting == -1) document.getElementById("advantageBox").checked = false;
     else if (setting == 1) document.getElementById("disadvantageBox").checked = false;
 }
+
+
+// When the user scrolls down 20px from the top of the document, slide down the settings bar
+window.onscroll = function () { scrollFunction() };
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("settingsBar").style.top = "0";
+    } else {
+        document.getElementById("settingsBar").style.top = "-50px";
+    }
+}
