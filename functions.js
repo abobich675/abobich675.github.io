@@ -52,11 +52,11 @@ function createGrid() {
 
 
             var nameLabel = weapons["weapons"][i]["name"];
-            const nameNode = document.createTextNode(label);
+            const nameNode = document.createTextNode(nameLabel);
 
             var damageLabel = weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"]
             if (weapons["weapons"][i]["bonus"] != 0) damageLabel += " + " + weapons["weapons"][i]["bonus"];
-            const damageNode = document.createTextNode(label);
+            const damageNode = document.createTextNode(damageLabel);
 
             row.appendChild(column);
             column.appendChild(par);
