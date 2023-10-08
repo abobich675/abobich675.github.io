@@ -9,8 +9,10 @@ function startup() {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            createGrid(data);
+            weapons = data;
+            createGrid();
         })
+    document.body.style.backgroundImage = "url('bgIMG/" + Math.floor(Math.random() * 3 + 1) + ".jpg')";
 }
 
 function roll(count, size) {
@@ -105,8 +107,8 @@ function attack(weapon) {
 }
 
 //Called once upon initialization. Creates a grid of weapons based on data parameter. Initializes "weapons" variable for use in all other functions
-function createGrid(data) {
-    weapons = data;
+function createGrid() {
+    
     var row;
     var gridCells = weapons["weapons"].length;
     while (gridCells % columns != 0) gridCells += 1;
@@ -126,8 +128,8 @@ function createGrid(data) {
         var green = 0; //(Math.floor(i / columns) + 1) * 20;
         // multiplier*columns-Abs(red-blue)
         var blue = ((i % columns) + 1) * multiplier; // (red) * (green) / 20;
-        if (((Math.floor(i / columns) + 1) + ((i + 1) % columns)) % 2 == 0) var alpha = 0.6;
-        else var alpha = 0.7;
+        if (((Math.floor(i / columns) + 1) + ((i + 1) % columns)) % 2 == 0) var alpha = 0.5;
+        else var alpha = 0.6;
         column.style.backgroundColor = "rgba(" + red + "," + green + "," + blue + "," + alpha + ")";
 
         if (weapons["weapons"][i]) {
