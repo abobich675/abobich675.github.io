@@ -120,7 +120,7 @@ function createGrid(data) {
         else var alpha = 0.4;
         column.style.backgroundColor = "rgba(" + red + "," + green + "," + blue + "," + alpha + ")";
 
-        if (weapons["weapons"][i].isArray()) {
+        if (Array.isArray(weapons["weapons"][i])) {
             const par = document.createElement("p");
             par.id = "gridSquare" + i;
 
