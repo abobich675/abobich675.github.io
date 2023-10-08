@@ -29,3 +29,12 @@ label {
 input {
     accent-color: #DD3E3E;
 }
+
+.settingsBar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+}

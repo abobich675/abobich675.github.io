@@ -51,14 +51,18 @@ function createGrid() {
             button.value = "Roll";
 
 
-            var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
-            if (weapons["weapons"][i]["bonus"] != 0) label += " + " + weapons["weapons"][i]["bonus"];
-            const node = document.createTextNode(label);
+            var nameLabel = weapons["weapons"][i]["name"];
+            const nameNode = document.createTextNode(label);
+
+            var damageLabel = weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"]
+            if (weapons["weapons"][i]["bonus"] != 0) damageLabel += " + " + weapons["weapons"][i]["bonus"];
+            const damageNode = document.createTextNode(label);
 
             row.appendChild(column);
             column.appendChild(par);
             column.appendChild(button);
-            par.appendChild(node);
+            par.appendChild(nameNode);
+            par.appendChild(damageNode)
         } else row.appendChild(column);
 
         if (i % columns == 0) {
