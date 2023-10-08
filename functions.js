@@ -139,6 +139,7 @@ function createGrid(data) {
             column.appendChild(button);
             par.appendChild(node);
         } else row.appendChild(column);
+        console.log(Array.isArray(weapons["weapons"][i]));
 
         if (i % columns == 0) {
             document.getElementById('grid').appendChild(row);

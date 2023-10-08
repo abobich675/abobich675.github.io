@@ -5,6 +5,10 @@
     accent-color: #DD3E3E;
 }
 
+body {
+    background-image: url("1");
+}
+
 .row {
     display: flex;
 }
