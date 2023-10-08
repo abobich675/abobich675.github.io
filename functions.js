@@ -12,7 +12,76 @@ function startup() {
             weapons = data;
             createGrid();
         })
-    document.body.style.backgroundImage = "url('bgIMG/" + Math.floor(Math.random() * 3 + 1) + ".jpg')";
+    document.body.style.backgroundImage = "url('bgIMG/" + Math.floor(Math.random() * 7 + 1) + ".jpg')";
+}
+
+//Called once upon initialization. Creates a grid of weapons based on data parameter. Initializes "weapons" variable for use in all other functions
+function createGrid() {
+
+    var row;
+    var gridCells = weapons["weapons"].length;
+    while (gridCells % columns != 0) gridCells += 1;
+
+    for (let i = 0; i < gridCells; i++) {
+
+        if (i % columns == 0) {
+            row = document.createElement("div");
+            row.classList.add("row");
+        }
+        const column = document.createElement("div");
+        column.classList.add("column");
+
+        //column.style.backgroundColor = "rgba(0,0,0," + ((i % columns) + 1) * ((Math.floor(i / columns) + 1) + 2) / 50 + ")";
+        var multiplier = 255 / columns;
+        var red = (columns - ((i % columns) + 1)) * multiplier;
+        var green = 0; //(Math.floor(i / columns) + 1) * 20;
+        // multiplier*columns-Abs(red-blue)
+        var blue = ((i % columns) + 1) * multiplier; // (red) * (green) / 20;
+        if (((Math.floor(i / columns) + 1) + ((i + 1) % columns)) % 2 == 0) var alpha = 0.4;
+        else var alpha = 0.5;
+        column.style.backgroundColor = "rgba(" + red + "," + green + "," + blue + "," + alpha + ")";
+
+        if (weapons["weapons"][i]) {
+            const par = document.createElement("p");
+            par.id = "gridSquare" + i;
+
+            const button = document.createElement("input");
+            button.type = "button";
+            button.onclick = function () { attack(i) };
+            button.value = "Roll";
+
+
+            var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
+            if (weapons["weapons"][i]["bonus"] != 0) label += " + " + weapons["weapons"][i]["bonus"];
+            const node = document.createTextNode(label);
+
+            row.appendChild(column);
+            column.appendChild(par);
+            column.appendChild(button);
+            par.appendChild(node);
+        } else row.appendChild(column);
+
+        if (i % columns == 0) {
+            document.getElementById('grid').appendChild(row);
+        }
+    }
+}
+
+//Refreshes the labels of all weapons in the grid. Used to update after changes are made to modifiers
+function refreshGrid() {
+
+    for (let i = 0; i < weapons["weapons"].length; i++) {
+        var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
+        var mod = getMod(i);
+
+        if (isNaN(mod) || mod == "") {
+            if (weapons["weapons"][i]["bonus"] != 0) label += " + " + weapons["weapons"][i]["bonus"];
+        } else {
+            if (weapons["weapons"][i]["bonus"] != 0) mod += weapons["weapons"][i]["bonus"];
+            label += " + " + mod;
+        }
+        changeText('gridSquare' + i, label);
+    }
 }
 
 function roll(count, size) {
@@ -65,11 +134,6 @@ function attack(weapon) {
     var damage;
     var mod = getMod(weapon);
 
-    if (isNaN(ac) || ac == "") {
-        alert("You must enter a valid Armor Class!");
-        return;
-    }
-
     if (document.getElementById("disadvantageBox").checked) {
         var disadvantage = Math.floor((Math.random() * 20) + 1);
         if (disadvantage < toHit) toHit = disadvantage;
@@ -91,91 +155,24 @@ function attack(weapon) {
         else toHit += mod;
     } else toHit += mod;
 
-    if (critRule && nat20) success = true;
-    else if (toHit >= ac) success = true;
-    else success = false;
+    if (!(isNaN(ac) || ac == "")) {
+        if (critRule && nat20) success = true;
+        else if (toHit >= ac) success = true;
+        else success = false;
+    }
+    
 
     damage = roll(count, size) + mod;
     if (nat20) damage += roll(count, size);
     if (!(isNaN(toHit) || toHit == "") && !(isNaN(damage) || damage == "") && !(isNaN(ac) || ac == "")) {
         if (nat20 && critRule) output("You rolled a Natural 20!!!\nYou deal " + damage + " damage!");
         else if (nat1 && critRule) output("You rolled a Natural 1.\nLoser.");
-        else if (success) output("You rolled a " + toHit + " which beats your enemy's " + ac + " Armor Class\nYou deal " + damage + " damage!");
-        else output("You rolled a " + toHit + " which misses your enemy's " + ac + " Armor Class");
-    }
-    
-}
-
-//Called once upon initialization. Creates a grid of weapons based on data parameter. Initializes "weapons" variable for use in all other functions
-function createGrid() {
-    
-    var row;
-    var gridCells = weapons["weapons"].length;
-    while (gridCells % columns != 0) gridCells += 1;
-
-    for (let i = 0; i < gridCells; i++) {
-        
-        if (i % columns == 0) {
-            row = document.createElement("div");
-            row.classList.add("row");
-        }
-        const column = document.createElement("div");
-        column.classList.add("column");
-
-        //column.style.backgroundColor = "rgba(0,0,0," + ((i % columns) + 1) * ((Math.floor(i / columns) + 1) + 2) / 50 + ")";
-        var multiplier = 255 / columns;
-        var red = (columns - ((i % columns) + 1)) * multiplier; 
-        var green = 0; //(Math.floor(i / columns) + 1) * 20;
-        // multiplier*columns-Abs(red-blue)
-        var blue = ((i % columns) + 1) * multiplier; // (red) * (green) / 20;
-        if (((Math.floor(i / columns) + 1) + ((i + 1) % columns)) % 2 == 0) var alpha = 0.5;
-        else var alpha = 0.6;
-        column.style.backgroundColor = "rgba(" + red + "," + green + "," + blue + "," + alpha + ")";
-
-        if (weapons["weapons"][i]) {
-            const par = document.createElement("p");
-            par.id = "gridSquare" + i;
-
-            const button = document.createElement("input");
-            button.type = "button";
-            button.onclick = function () { attack(i) };
-            button.value = "Roll";
-
-
-            var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
-            if (weapons["weapons"][i]["bonus"] != 0) label += " + " + weapons["weapons"][i]["bonus"];
-            const node = document.createTextNode(label);
-
-            row.appendChild(column);
-            column.appendChild(par);
-            column.appendChild(button);
-            par.appendChild(node);
-        } else row.appendChild(column);
-
-        if (i % columns == 0) {
-            document.getElementById('grid').appendChild(row);
-        }
-    }
-}
-
-
-//Refreshes the labels of all weapons in the grid. Used to update after changes are made to modifiers
-function refreshGrid() {
-
-    for (let i = 0; i < weapons["weapons"].length; i++) {
-        var label = weapons["weapons"][i]["name"] + ": " + weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
-        var mod = getMod(i);
-
-        if (isNaN(mod) || mod == "") {
-            if (weapons["weapons"][i]["bonus"] != 0) label += " + " + weapons["weapons"][i]["bonus"];
-        } else {
-            if (weapons["weapons"][i]["bonus"] != 0) mod += weapons["weapons"][i]["bonus"];
-            label += " + " + mod;
-        }
-        changeText('gridSquare' + i, label);
-    }
-    
-
+        else if (success) output("You rolled a " + toHit + " which beats your enemy's " + ac + " Armor Class.\nYou deal " + damage + " damage!");
+        else output("You rolled a " + toHit + " which misses your enemy's " + ac + " Armor Class.");
+    } else if (!(isNaN(toHit) || toHit == "") && !(isNaN(damage) || damage == "")) {
+        if (nat20 && critRule) output("You rolled a Natural 20!!!\nYou deal " + damage + " damage!");
+        else if (nat1 && critRule) output("You rolled a Natural 1.\nLoser.");
+        else output("You rolled a " + toHit + ". \nYou deal " + damage + " damage!");
     
 }
 
