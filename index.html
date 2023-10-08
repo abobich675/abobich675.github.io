@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <!--CounterXXXXV-->
+    <!--CounterXXXXVI-->
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="functions.js"></script>
     <script type="text/javascript" src="elements.js"></script>
@@ -49,25 +49,35 @@
         <!--Advantage/Disadvantage-->
 
         <div class="column">
-            <label for="advantage">Disadvantage | Straight Roll | Advantage:</label> <br />
-            <input type="checkbox" id="disadvantageBox" onclick="advantageChanged(-1)" style="accent-color: #DD3E3E">
-            <input type="checkbox" id="straightRollBox" onclick="advantageChanged(0)" checked>
-            <input type="checkbox" id="advantageBox" onclick="advantageChanged(1)">
-        </div>
 
-        <!--Critical Success/Failure Rule-->
+            <div class="row" style="padding: 0px">
+                <div class="column" style="padding: 0px">
+                    <label for="disadvantage">Disadvantage:</label> <br />
+                    <input type="checkbox" id="disadvantageBox" onclick="advantageChanged(-1)" style="accent-color: #DD3E3E">
+                </div>
+                <div class="column" style="padding: 0px">
+                    <label for="straightRoll">Straight Roll:</label> <br />
+                    <input type="checkbox" id="straightRollBox" onclick="advantageChanged(0)" checked>
+                </div>
+                <div class="column" style="padding: 0px">
+                    <label for="advantage">Advantage:</label> <br />
+                    <input type="checkbox" id="advantageBox" onclick="advantageChanged(1)">
+                </div>
+            </div>
 
-        <div class="column">
-            <label for="critRule">Critical success/failure:</label> <br />
-            <input type="checkbox" id="nat20" checked>
-        </div>
+                <!--Critical Success/Failure Rule-->
 
-        <!--Refresh Grid Button-->
+                <div class="column">
+                    <label for="critRule">Critical success/failure:</label> <br />
+                    <input type="checkbox" id="nat20" checked>
+                </div>
 
-        <div class="column">
-            <input type="button" onclick="refreshGrid()" value="Refresh Grid">
-        </div>
-    </div>
+                <!--Refresh Grid Button-->
+
+                <div class="column">
+                    <input type="button" onclick="refreshGrid()" value="Refresh Grid">
+                </div>
+            </div>
 
 
     <!--Start of all Roll Options-->

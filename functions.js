@@ -111,7 +111,7 @@ function createGrid(data) {
         column.classList.add("column");
 
         //column.style.backgroundColor = "rgba(0,0,0," + ((i % columns) + 1) * ((Math.floor(i / columns) + 1) + 2) / 50 + ")";
-        var multiplier = 160 / columns;
+        var multiplier = 255 / columns;
         var red = (columns - ((i % columns) + 1)) * multiplier; 
         var green = 0; //(Math.floor(i / columns) + 1) * 20;
         // multiplier*columns-Abs(red-blue)
@@ -120,7 +120,7 @@ function createGrid(data) {
         else var alpha = 0.4;
         column.style.backgroundColor = "rgba(" + red + "," + green + "," + blue + "," + alpha + ")";
 
-        if (Array.isArray(weapons["weapons"][i])) {
+        if (weapons["weapons"][i]) {
             const par = document.createElement("p");
             par.id = "gridSquare" + i;
 
