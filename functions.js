@@ -228,12 +228,12 @@ function advantageChanged(setting) {
 
 
 // When the user scrolls down 20px from the top of the document, slide down the settings bar
-window.onscroll = function () { scrollFunction() };
+//window.onscroll = function () { scrollFunction() };
 
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("settingsBar").style.top = "0";
-    } else {
-        document.getElementById("settingsBar").style.top = "-50px";
-    }
-}
+//function scrollFunction() {
+//    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+//        document.getElementById("settingsBar").style.top = "0";
+//    } else {
+//        document.getElementById("settingsBar").style.top = "-50px";
+//    }
+//}
