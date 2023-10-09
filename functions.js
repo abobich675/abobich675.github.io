@@ -62,6 +62,7 @@ function createGrid() {
             column.appendChild(par);
             column.appendChild(button);
             par.appendChild(nameNode);
+            par.appendChild(document.createElement("br"));
             par.appendChild(damageNode)
         } else row.appendChild(column);
 
