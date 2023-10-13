@@ -241,4 +241,70 @@ function advantageChanged(setting) {
 
 function testFunction() {
     document.getElementById("grid").remove();
+    const grid = document.createElement("div");
+    grid.classList.add("column");
+    grid.id = "grid";
+
+    const nameNode = document.createTextNode("test");
+    grid.appendChild(nameNode);
+
+    document.getElementById("feedback").prepend(grid);
+}
+
+//Called once upon initialization. Creates a grid of weapons based on data parameter. Initializes "weapons" variable for use in all other functions
+function createGrid2() {
+
+    var row;
+    var gridCells = weapons["weapons"].length;
+    while (gridCells % columns != 0) gridCells += 1;
+
+    for (let i = 0; i < gridCells; i++) {
+
+        if (i % columns == 0) {
+            row = document.createElement("div");
+            row.classList.add("row");
+        }
+        const column = document.createElement("div");
+        column.classList.add("column");
+
+        //column.style.backgroundColor = "rgba(0,0,0," + ((i % columns) + 1) * ((Math.floor(i / columns) + 1) + 2) / 50 + ")";
+        var multiplier = 255 / columns;
+        var red = (columns - ((i % columns) + 1)) * multiplier;
+        var green = 0; //(Math.floor(i / columns) + 1) * 20;
+        // multiplier*columns-Abs(red-blue)
+        var blue = ((i % columns) + 1) * multiplier; // (red) * (green) / 20;
+        if (((Math.floor((i + 1) / columns)) + ((i + 1) % columns)) % 2 == 0) var alpha = 0.4;
+        else var alpha = 0.5;
+        column.style.backgroundColor = "rgba(" + red + "," + green + "," + blue + "," + alpha + ")";
+
+        if (weapons["weapons"][i]) {
+            const par = document.createElement("p");
+            par.id = "gridSquare" + i;
+
+            const button = document.createElement("input");
+            button.type = "button";
+            button.onclick = function () { attack(i) };
+            button.value = "Roll";
+
+
+            var nameLabel = weapons["weapons"][i]["name"];
+            const nameNode = document.createTextNode(nameLabel);
+
+            var damageLabel = weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"]
+            if (weapons["weapons"][i]["bonus"] != 0) damageLabel += " + " + weapons["weapons"][i]["bonus"];
+            const damageNode = document.createTextNode(damageLabel);
+
+            row.appendChild(column);
+            column.appendChild(par);
+            column.appendChild(button);
+            par.appendChild(nameNode);
+            par.appendChild(document.createElement("br"));
+            par.appendChild(damageNode)
+        } else row.appendChild(column);
+
+        if (i % columns == 0) {
+            document.getElementById('grid').appendChild(row);
+        }
+        console.log("weapon " + i + " added to grid");
+    }
 }
