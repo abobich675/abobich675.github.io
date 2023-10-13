@@ -1,4 +1,4 @@
-//Variable Creation
+// Variable Creation
 
 var weapons;
 var columns = 3;
@@ -15,7 +15,7 @@ function startup() {
     document.body.style.backgroundImage = "url('bgIMG/" + Math.floor(Math.random() * 7 + 1) + ".jpg')";
 }
 
-//Called once upon initialization. Creates a grid of weapons based on data parameter. Initializes "weapons" variable for use in all other functions
+// Called once upon initialization. Creates a grid of weapons based on data parameter. Initializes "weapons" variable for use in all other functions
 function createGrid() {
 
     var row;
@@ -73,7 +73,7 @@ function createGrid() {
     }
 }
 
-//Refreshes the labels of all weapons in the grid. Used to update after changes are made to modifiers
+// Refreshes the labels of all weapons in the grid. Used to update after changes are made to modifiers
 function refreshGrid() {
     document.getElementById("grid").remove();
     const grid = document.createElement("div");
@@ -81,8 +81,6 @@ function refreshGrid() {
     grid.id = "grid";
 
     document.getElementById("grid&feedback").prepend(grid);
-
-    columns = 4;
     createGrid();
 }
 
@@ -106,7 +104,7 @@ function changeText(element, text) {
 //}
 
 
-//Extends a parameter element with a paragraph of parameter text
+// Extends a parameter element with a paragraph of parameter text
 function addText(element, text) {
     const para = document.createElement("p");
     const node = document.createTextNode(text);
@@ -116,12 +114,12 @@ function addText(element, text) {
     element.appendChild(para);
 }
 
-//Displays a string parameter to the output/feedback box
+// Displays a string parameter to the output/feedback box
 function output(text) {
     addText('feedback', text);
 }
 
-//Performs an attack for a given parameter weapon in the form of an index to a "weapon" from the data.json file
+// Performs an attack for a given parameter weapon in the form of an index to a "weapon" from the data.json file
 function attack(weapon) {
     var count = weapons["weapons"][weapon]["damage"]["count"];
     var size = weapons["weapons"][weapon]["damage"]["size"];
@@ -179,7 +177,7 @@ function attack(weapon) {
     
 }
 
-//Returns a weapons modifier based on whether the weapon is labeled to use strength, dexterity, or finesse
+// Returns a weapons modifier based on whether the weapon is labeled to use strength, dexterity, or finesse
 function getMod(weapon) {
     var modType = weapons["weapons"][weapon]["modifier"];
     var str = document.getElementById("str").value * 1;
@@ -217,7 +215,7 @@ function getMod(weapon) {
     return mod;
 }
 
-//Unchecks other boxes when a advantage setting is selected
+// Unchecks other boxes when a advantage setting is selected
 function advantageChanged(setting) {
     if (setting == -1) document.getElementById("advantageBox").checked = false;
     else if (setting == 1) document.getElementById("disadvantageBox").checked = false;
@@ -235,11 +233,13 @@ function advantageChanged(setting) {
 //    }
 //}
 
-function testFunction() {
-    
-}
 
+// Changes the number of columns in the weapon grid and refreshes the grid
 function columnNumber(difference) {
     columns += difference;
     refreshGrid();
+}
+
+function testFunction() {
+
 }
