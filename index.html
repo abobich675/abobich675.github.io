@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <!--CounterLXXIV-->
+    <!--CounterLXXV-->
 
     <title>D&D Roll: Dungeons and Dragons dice automated</title>
     <link rel="stylesheet" href="style.css">
@@ -81,12 +81,17 @@
                 <!--Refresh Grid Button-->
 
                 <div class="column">
-                    <input type="button" onclick="testFunction()" value="Refresh Grid">
+                    <input type="button" onclick="refreshGrid()" value="Refresh Grid">
                 </div>
             </div>
 
 
             <!--Start of all Roll Options-->
+
+            <div style="padding-top: 15px">
+                <input type="button" onclick="columnNumber(-1)" value="-" />
+                <input type="button" onclick="columnNumber(1)" value="+" />
+            </div>
 
             <div class="row" style="padding-top: 15px" id="grid&feedback">
                 <div class="column" id="grid"></div>
@@ -99,10 +104,7 @@
                 </div>
             </div>
         </div>
-        <div class="column" style="max-width: 10%; padding-top: 0px"></div>
+            <div class="column" style="max-width: 10%; padding-top: 0px"></div>
     </div>
-
-
-        
 </body>
 </html>
