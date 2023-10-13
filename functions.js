@@ -31,7 +31,6 @@ function createGrid() {
         const column = document.createElement("div");
         column.classList.add("column");
 
-        //column.style.backgroundColor = "rgba(0,0,0," + ((i % columns) + 1) * ((Math.floor(i / columns) + 1) + 2) / 50 + ")";
         var multiplier = 255 / columns;
         var red = (columns - ((i % columns) + 1)) * multiplier;
         var green = 0; //(Math.floor(i / columns) + 1) * 20;
@@ -69,7 +68,6 @@ function createGrid() {
         if (i % columns == 0) {
             document.getElementById('grid').appendChild(row);
         }
-        console.log("weapon " + i + " added to grid");
     }
 }
 
@@ -237,6 +235,7 @@ function advantageChanged(setting) {
 // Changes the number of columns in the weapon grid and refreshes the grid
 function columnNumber(difference) {
     columns += difference;
+    console.log("Grid columns changed by" + difference);
     refreshGrid();
 }
 
