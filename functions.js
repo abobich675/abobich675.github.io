@@ -248,7 +248,10 @@ function testFunction() {
     const nameNode = document.createTextNode("test");
     grid.appendChild(nameNode);
 
-    document.getElementById("feedback").prepend(grid);
+    document.getElementById("grid&feedback").prepend(grid);
+
+    columns = 4;
+    createGrid();
 }
 
 //Called once upon initialization. Creates a grid of weapons based on data parameter. Initializes "weapons" variable for use in all other functions
