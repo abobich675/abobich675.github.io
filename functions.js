@@ -238,3 +238,7 @@ function advantageChanged(setting) {
 //        document.getElementById("settingsBar").style.top = "-50px";
 //    }
 //}
+
+function testFunction() {
+    document.getElementById("grid").remove();
+}
