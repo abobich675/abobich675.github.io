@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <!--CounterLXXXXIV-->
+    <!--CounterLXXXXV-->
 
     <title>D&D Roll: Dungeons and Dragons dice automated</title>
     <link rel="stylesheet" href="style.css">
@@ -24,25 +24,20 @@
         <!--First row of headers-->
 
             <div class="settingsBar">
-                <!--Armor Class Field-->
 
-
-                <label for="AC">Armor Class:</label>
-                <input type="text" id="AC" name="AC" placeholder="Armor Class" style="width:min-content"> <br />
-
-
-                <!--Strength Field-->
-
-
-                <label for="str">Strength:</label>
-                <input type="text" id="str" name="str" placeholder="Strength" style="width:max-content">> <br />
-
-
-                <!--Dexterity Field-->
-
-
-                <label for="dex">Dexterity:</label>
-                <input type="text" id="dex" name="dex" placeholder="Dexterity" style="width:unset">> <br />
+                <div class="row">
+                    <div class="column">
+                        <label for="AC">Armor Class:</label> <br />
+                        <label for="str">Strength:</label> <br />
+                        <label for="dex">Dexterity:</label> <br />
+                    </div>
+                    <div class="column">
+                        <input type="text" id="AC" name="AC" placeholder="Armor Class" style="width:min-content"> <br />
+                        <input type="text" id="str" name="str" placeholder="Strength" style="width:max-content"> <br />
+                        <input type="text" id="dex" name="dex" placeholder="Dexterity" style="width:unset"> <br />
+                    </div>
+                </div>
+                
 
             </div>
 
