@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <!--CounterLXXXIII-->
+    <!--CounterLXXXIV-->
 
     <title>D&D Roll: Dungeons and Dragons dice automated</title>
     <link rel="stylesheet" href="style.css">
@@ -91,26 +91,27 @@
             <!--Column Option Buttons-->
 
             <div class="row" style="padding:0px">
-                <div class="column"style="padding:0px">
+                <div class="column"style="padding: 0px; min-height: 0px">
                     <input type="button" onclick="columnNumber(-1)" value="-" />
                     <input type="button" onclick="columnNumber(1)" value="+" />
                 </div>
-                <div class="column" style="max-width: 25%; padding:0px"></div>
-                    
-                </div>
+                <div class="column" style="max-width: 25%; padding: 0px; min-height: 0px"></div>
+            </div>
 
-                <div class="row" style="padding-top: 15px" id="grid&feedback">
-                    <div class="column" id="grid"></div>
+            <div class="row" style="padding-top: 15px" id="grid&feedback">
 
-                    <!--<input type="button" style="min-height:75px; padding:25px; background-color:grey" value="Test Button">-->
-                    <!--Feedback-->
+                <!--Grid-->
 
-                    <div class="column" style="max-width: 25%; font-size:small;">
-                        <div id="feedback" style="opacity: 0.8; background-color: palegreen; padding: 15px; min-height: 60px; border: solid; border: green 5px;">Output:</div>
-                    </div>
+                <div class="column" id="grid"></div>
+
+                <!--Feedback-->
+
+                <div class="column" style="max-width: 25%; font-size:small;">
+                    <div id="feedback" style="opacity: 0.8; background-color: palegreen; padding: 15px; min-height: 60px; border: solid; border: green 5px;">Output:</div>
                 </div>
             </div>
-            <div class="column" style="max-width: 10%; padding-top: 0px"></div>
+        </div>
+        <div class="column" style="max-width: 10%; padding-top: 0px"></div>
     </div>
 </body>
 </html>
