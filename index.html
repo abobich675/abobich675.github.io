@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <!--CounterLXXXV-->
+    <!--CounterLXXXVI-->
 
     <title>D&D Roll: Dungeons and Dragons dice automated</title>
     <link rel="stylesheet" href="style.css">
@@ -17,39 +17,33 @@
         <div class="column" style="max-width: 10%; padding-top: 0px"></div>
         <div class="column" style="background-color: rgba(255,255,255,0.85); padding-top: 0px">
 
-            <!--Settings Bar-->
+        <!--Page Head-->
 
-            <div class="settingsBar">
-                <p>test</p>
-            </div>
+        <h1>D&D Roll</h1>
 
-            <!--Page Head-->
+        <!--First row of headers-->
+        <!--Armor Class Field-->
 
-            <h1>D&D Roll</h1>
 
-            <!--First row of headers-->
+        <label for="AC">Enter your target's Armor Class in the field below:</label> <br />
+        <input type="text" id="AC" name="AC" placeholder="Armor Class">
+
+
+        <!--Strength Field-->
+
+
+        <label for="str">Enter your strength in the field below:</label> <br />
+        <input type="text" id="str" name="str" placeholder="Strength">
+
+
+        <!--Dexterity Field-->
+
+
+        <label for="dex">Enter your dexterity in the field below:</label> <br />
+        <input type="text" id="dex" name="dex" placeholder="Dexterity">
+
             <div class="row">
 
-                <!--Armor Class Field-->
-
-                <div class="column">
-                    <label for="AC">Enter your target's Armor Class in the field below:</label> <br />
-                    <input type="text" id="AC" name="AC" placeholder="Armor Class">
-                </div>
-
-                <!--Strength Field-->
-
-                <div class="column">
-                    <label for="str">Enter your strength in the field below:</label> <br />
-                    <input type="text" id="str" name="str" placeholder="Strength">
-                </div>
-
-                <!--Dexterity Field-->
-
-                <div class="column">
-                    <label for="dex">Enter your dexterity in the field below:</label> <br />
-                    <input type="text" id="dex" name="dex" placeholder="Dexterity">
-                </div>
 
                 <!--Advantage/Disadvantage-->
 
@@ -87,11 +81,10 @@
 
 
             <!--Start of all Roll Options-->
-
             <!--Column Option Buttons-->
 
             <div class="row" style="padding-top: 15px">
-                <div class="column"style="padding: 0px; min-height: 0px">
+                <div class="column" style="padding: 0px; min-height: 0px">
                     <input type="button" onclick="columnNumber(-1)" value="-" />
                     <input type="button" onclick="columnNumber(1)" value="+" />
                 </div>
