@@ -40,5 +40,8 @@ input {
     padding-left: 15px;
     padding-right: 15px;
     text-align: left;
+    top: 100px;
+    left: 10%;
+
     /*    transition: top 0.3s;*/
 }
