@@ -33,7 +33,8 @@ input {
 }
 
 .settingsBar {
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
     background-color: rgba(0,0,0,0.15);
     position: fixed;
     /*    display: inline-block;*/
@@ -41,6 +42,5 @@ input {
     text-align: left;
     top: 75px;
     left: 15%;
-
     /*    transition: top 0.3s;*/
 }
