@@ -237,8 +237,8 @@ function columnNumber(difference) {
     if (columns += difference > 0) {
         columns += difference;
         console.log("Grid columns changed by" + difference);
+        refreshGrid();
     } else console.log("Could not change grid columns by" + difference);
-    refreshGrid();
 }
 
 function testFunction() {
