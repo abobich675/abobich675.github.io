@@ -2,13 +2,10 @@
 <html>
 
 <head>
-    <!--CounterCV-->
-
     <title>D&D Roll: Dungeons and Dragons dice automated</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="functions.js"></script>
+    <link rel="stylesheet" href="dndStyle.css">
+    <script type="text/javascript" src="dndFunctions.js"></script>
     <script type="text/javascript" src="elements.js"></script>
-
 </head>
 
 <body id="body" onload="startup()">
@@ -29,18 +26,18 @@
 
                     <!--Labels-->
 
-                    <div class="column" style="text-align: left; width: 85px">
+                    <div class="column" style="text-align: left; width: 80px">
                         <label for="AC">Armor Class:</label> <br />
                         <label for="str">Strength:</label> <br />
                         <label for="dex">Dexterity:</label> <br />
                         <label for="advantage">Advantage:</label> <br />
                         <label for="disadvantage">Disadvantage:</label> <br />
-                        <label for="critRule">Critical success/failure:</label> <br />
+                        <label for="critRule">Crits:</label> <br />
                     </div>
 
                     <!--Inputs-->
 
-                    <div class="column" style="text-align: left; width: 50px">
+                    <div class="column" style="text-align: left; width: 30px">
                         <input type="text" id="AC" name="AC" placeholder="AC" style="width:50px"> <br />
                         <input type="text" id="str" name="str" placeholder="Str" style="width:50px"> <br />
                         <input type="text" id="dex" name="dex" placeholder="Dex" style="width:50px"> <br />

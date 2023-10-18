@@ -35,9 +35,8 @@ input {
 .settingsBar {
     overflow-x: hidden;
     overflow-y: auto;
-    background-color: #DD3E3E;
-    opacity: 0.5;
-/*    rgba(0,0,0,0.5);*/
+    background-color: rgba(0,0,0,0.75);
+    color: white;
     position: fixed;
     /*    display: inline-block;*/
     padding: 5px;

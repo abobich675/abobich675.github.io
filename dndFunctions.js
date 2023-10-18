@@ -5,7 +5,7 @@ var columns = 3;
 
 function startup() {
     console.log("startup");
-    fetch("data.json")
+    fetch("dndData.json")
         .then(response => response.json())
         .then(data => {
             console.log(data);
