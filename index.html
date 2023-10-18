@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <!--CounterLXXXXVII-->
+    <!--CounterLXXXXVIII-->
 
     <title>D&D Roll: Dungeons and Dragons dice automated</title>
     <link rel="stylesheet" href="style.css">
@@ -26,41 +26,23 @@
             <div class="settingsBar" style="width: 150px">
 
                 <div class="row">
-                    <div class="column" style="text-align: left; width: 75px">
+                    <div class="column" style="text-align: left; width: 80px">
                         <label for="AC">Armor Class:</label> <br />
                         <label for="str">Strength:</label> <br />
                         <label for="dex">Dexterity:</label> <br />
+                        <label for="advantage">Advantage:</label> <br />
+                        <label for="disadvantage">Disadvantage:</label> <br />
                     </div>
-                    <div class="column" style="text-align: left; width: 75px">
-                        <input type="text" id="AC" name="AC" placeholder="Armor Class" style="width:50px"> <br />
-                        <input type="text" id="str" name="str" placeholder="Strength" style="width:50px"> <br />
-                        <input type="text" id="dex" name="dex" placeholder="Dexterity" style="width:50px"> <br />
+                    <div class="column" style="text-align: left; width: 50px">
+                        <input type="text" id="AC" name="AC" placeholder="AC" style="width:50px"> <br />
+                        <input type="text" id="str" name="str" placeholder="Str" style="width:50px"> <br />
+                        <input type="text" id="dex" name="dex" placeholder="Dex" style="width:50px"> <br />
+                        <input type="checkbox" id="advantageBox" onclick="advantageChanged(1)" style="accent-color: #DD3E3E">
+                        <input type="checkbox" id="disadvantageBox" onclick="advantageChanged(-1)" style="accent-color: #DD3E3E">
                     </div>
                 </div>
                 
 
-            </div>
-
-        
-
-            <div class="row">
-
-
-                <!--Advantage/Disadvantage-->
-
-                <div class="column">
-
-                    <div class="row" style="padding: 0px">
-                        <div class="column" style="padding: 0px">
-                            <label for="disadvantage">Disadvantage:</label> <br />
-                            <input type="checkbox" id="disadvantageBox" onclick="advantageChanged(-1)" style="accent-color: #DD3E3E">
-                        </div>
-                        <div class="column" style="padding: 0px">
-                            <label for="advantage">Advantage:</label> <br />
-                            <input type="checkbox" id="advantageBox" onclick="advantageChanged(1)" style="accent-color: #DD3E3E">
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <!--Second Row of Headers-->
