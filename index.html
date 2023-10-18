@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <!--CounterLXXXXVIII-->
+    <!--CounterIC-->
 
     <title>D&D Roll: Dungeons and Dragons dice automated</title>
     <link rel="stylesheet" href="style.css">
@@ -32,13 +32,15 @@
                         <label for="dex">Dexterity:</label> <br />
                         <label for="advantage">Advantage:</label> <br />
                         <label for="disadvantage">Disadvantage:</label> <br />
+                        <label for="critRule">Critical success/failure:</label> <br />
                     </div>
                     <div class="column" style="text-align: left; width: 50px">
                         <input type="text" id="AC" name="AC" placeholder="AC" style="width:50px"> <br />
                         <input type="text" id="str" name="str" placeholder="Str" style="width:50px"> <br />
                         <input type="text" id="dex" name="dex" placeholder="Dex" style="width:50px"> <br />
-                        <input type="checkbox" id="advantageBox" onclick="advantageChanged(1)" style="accent-color: #DD3E3E">
-                        <input type="checkbox" id="disadvantageBox" onclick="advantageChanged(-1)" style="accent-color: #DD3E3E">
+                        <input type="checkbox" id="advantageBox" onclick="advantageChanged(1)" style="accent-color: #DD3E3E"> <br />
+                        <input type="checkbox" id="disadvantageBox" onclick="advantageChanged(-1)" style="accent-color: #DD3E3E"> <br />
+                        <input type="checkbox" id="nat20" checked>
                     </div>
                 </div>
                 
@@ -52,13 +54,6 @@
 
                 <div class="column">
                     <label for="critRule">Critical success/failure:</label> <br />
-                    <input type="checkbox" id="nat20" checked>
-                </div>
-
-                <!--Refresh Grid Button-->
-
-                <div class="column">
-                    <input type="button" onclick="refreshGrid()" value="Refresh Grid">
                 </div>
             </div>
 
