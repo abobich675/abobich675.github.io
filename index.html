@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <!--CounterC-->
+    <!--CounterCI-->
 
     <title>D&D Roll: Dungeons and Dragons dice automated</title>
     <link rel="stylesheet" href="style.css">
@@ -21,11 +21,14 @@
 
             <h1>D&D Roll</h1>
 
-        <!--First row of headers-->
+        <!--Settings Bar-->
 
             <div class="settingsBar" style="width: 150px">
 
                 <div class="row">
+
+                    <!--Labels-->
+
                     <div class="column" style="text-align: left; width: 85px">
                         <label for="AC">Armor Class:</label> <br />
                         <label for="str">Strength:</label> <br />
@@ -34,6 +37,9 @@
                         <label for="disadvantage">Disadvantage:</label> <br />
                         <label for="critRule">Critical success/failure:</label> <br />
                     </div>
+
+                    <!--Inputs-->
+
                     <div class="column" style="text-align: left; width: 50px">
                         <input type="text" id="AC" name="AC" placeholder="AC" style="width:50px"> <br />
                         <input type="text" id="str" name="str" placeholder="Str" style="width:50px"> <br />
@@ -42,18 +48,6 @@
                         <input type="checkbox" id="disadvantageBox" onclick="advantageChanged(-1)" style="accent-color: #DD3E3E"> <br />
                         <input type="checkbox" id="nat20" checked>
                     </div>
-                </div>
-                
-
-            </div>
-
-            <!--Second Row of Headers-->
-            <div class="row" style="border-block-end: 5px solid #DD3E3E; padding-bottom: 0px">
-
-                <!--Critical Success/Failure Rule-->
-
-                <div class="column">
-                    <label for="critRule">Critical success/failure:</label> <br />
                 </div>
             </div>
 
