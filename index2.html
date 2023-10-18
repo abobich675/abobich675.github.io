@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--CounterCII-->
+
+    <title>D&D Roll: Dungeons and Dragons dice automated</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="functions.js"></script>
+    <script type="text/javascript" src="elements.js"></script>
+
+</head>
+
+<body id="body" onload="startup()">
+
+    <div class="row" style="padding-top: 0px">
+        <div class="column" style="max-width: 10%; padding-top: 0px"></div>
+        <div class="column" style="background-color: rgba(255,255,255,0.85); padding-top: 0px">
+
+        <!--Page Head-->
+
+            <h1>D&D Roll</h1>
+
+        <!--Settings Bar-->
+
+            <div class="settingsBar" style="width: 150px">
+
+                <div class="row">
+
+                    <!--Labels-->
+
+                    <div class="column" style="text-align: left; width: 85px">
+                        <label for="AC">Armor Class:</label> <br />
+                        <label for="str">Strength:</label> <br />
+                        <label for="dex">Dexterity:</label> <br />
+                        <label for="advantage">Advantage:</label> <br />
+                        <label for="disadvantage">Disadvantage:</label> <br />
+                        <label for="critRule">Critical success/failure:</label> <br />
+                    </div>
+
+                    <!--Inputs-->
+
+                    <div class="column" style="text-align: left; width: 50px">
+                        <input type="text" id="AC" name="AC" placeholder="AC" style="width:50px"> <br />
+                        <input type="text" id="str" name="str" placeholder="Str" style="width:50px"> <br />
+                        <input type="text" id="dex" name="dex" placeholder="Dex" style="width:50px"> <br />
+                        <input type="checkbox" id="advantageBox" onclick="advantageChanged(1)" style="accent-color: #DD3E3E"> <br />
+                        <input type="checkbox" id="disadvantageBox" onclick="advantageChanged(-1)" style="accent-color: #DD3E3E"> <br />
+                        <input type="checkbox" id="nat20" checked>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--Start of all Roll Options-->
+            <!--Column Option Buttons-->
+
+            <div class="row" style="padding-top: 15px">
+                <div class="column" style="padding: 0px; min-height: 0px">
+                    <input type="button" onclick="columnNumber(-1)" value="-" />
+                    <input type="button" onclick="columnNumber(1)" value="+" />
+                </div>
+                <div class="column" style="max-width: 25%; padding: 0px; min-height: 0px"></div>
+            </div>
+
+            <div class="row" id="grid&feedback">
+
+                <!--Grid-->
+
+                <div class="column" id="grid"></div>
+
+                <!--Feedback-->
+
+                <div class="column" style="max-width: 25%; font-size:small;">
+                    <div id="feedback" style="opacity: 0.8; background-color: palegreen; padding: 15px; min-height: 60px; border: solid; border: green 5px;">Output:</div>
+                </div>
+            </div>
+        </div>
+        <div class="column" style="max-width: 10%; padding-top: 0px"></div>
+    </div>
+</body>
+</html>
