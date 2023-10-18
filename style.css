@@ -35,12 +35,12 @@ input {
 .settingsBar {
     overflow-x: hidden;
     overflow-y: auto;
-    background-color: rgba(0,0,0,0.25);
+    background-color: rgba(0,0,0,0.5);
     position: fixed;
     /*    display: inline-block;*/
     padding: 5px;
     text-align: left;
-    top: 75px;
+    top: 50px;
     left: 15%;
     /*    transition: top 0.3s;*/
 }
