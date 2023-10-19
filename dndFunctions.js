@@ -56,7 +56,7 @@ function createGrid() {
             var damageLabel = weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"];
             var bonus = weapons["weapons"][i]["bonus"] + getMod(i);
 
-            if (bonus != 0) damageLabel += " + " + bonus;
+            if (!isNaN(bonus) && bonus != 0) damageLabel += " + " + bonus;
             const damageNode = document.createTextNode(damageLabel);
 
             row.appendChild(column);
