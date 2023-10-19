@@ -42,6 +42,7 @@ function createGrid() {
 
         if (weapons["weapons"][i]) {
             const par = document.createElement("p");
+            par.style = "padding-bottom: 0px";
             par.id = "gridSquare" + i;
 
             const button = document.createElement("input");
