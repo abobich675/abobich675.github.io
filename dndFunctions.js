@@ -242,7 +242,7 @@ function advantageChanged(setting) {
 
 // Changes the number of columns in the weapon grid and refreshes the grid
 function columnNumber(difference) {
-    if (columns += difference > 0) {
+    if (columns + difference > 0) {
         columns += difference;
         console.log("Grid columns changed by" + difference);
         refreshGrid();
