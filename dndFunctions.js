@@ -53,6 +53,8 @@ function createGrid() {
             var nameLabel = weapons["weapons"][i]["name"];
             const nameNode = document.createTextNode(nameLabel);
 
+            console.log("bonus: " + bonus);
+
             var damageLabel = weapons["weapons"][i]["damage"]["count"] + "d" + weapons["weapons"][i]["damage"]["size"]
             if (weapons["weapons"][i]["bonus"] != 0) damageLabel += " + " + weapons["weapons"][i]["bonus"];
             const damageNode = document.createTextNode(damageLabel);
@@ -213,6 +215,7 @@ function getMod(weapon) {
     }
 
     if (mod == "") mod = 0;
+    console.log("mod: " + mod);
     return mod;
 }
 
