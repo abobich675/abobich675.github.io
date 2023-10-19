@@ -1,0 +1,3 @@
+﻿function onTextInput() {
+    alert("yay");
+}
