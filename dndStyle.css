@@ -40,6 +40,7 @@ input {
     position: fixed;
     /*    display: inline-block;*/
     padding: 5px;
+    padding-top: 10px;
     text-align: left;
     top: 50px;
     left: 15%;
