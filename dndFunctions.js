@@ -59,12 +59,17 @@ function createGrid() {
             if (!isNaN(bonus) && bonus != 0) damageLabel += " + " + bonus;
             const damageNode = document.createTextNode(damageLabel);
 
+            var damageTypeLabel = weapons["weapons"][i]["damage"]["type"];
+            const damageTypeNode = document.createTextNode(damageTypeLabel);
+
             row.appendChild(column);
             column.appendChild(par);
             column.appendChild(button);
             par.appendChild(nameNode);
             par.appendChild(document.createElement("br"));
-            par.appendChild(damageNode)
+            par.appendChild(damageNode);
+            par.appendChild(document.createElement("br"));
+            par.appendChild(damageTypeNode);
         } else row.appendChild(column);
 
         if (i % columns == 0) {
