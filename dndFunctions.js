@@ -12,7 +12,7 @@ function startup() {
             weapons = data;
             createGrid();
         })
-    document.body.style.backgroundImage = "url('bgIMG/" + Math.floor(Math.random() * 7 + 1) + ".jpg')";
+    document.body.style.backgroundImage = "url('bgIMG/" + Math.floor(Math.random() * 22 + 1) + ".jpg')";
 }
 
 // Called once upon initialization. Creates a grid of weapons based on data parameter. Initializes "weapons" variable for use in all other functions
@@ -75,7 +75,6 @@ function createGrid() {
 
 // Refreshes the labels of all weapons in the grid. Used to update after changes are made to modifiers
 function refreshGrid() {
-    console.log("grid refresh attempt");
     document.getElementById("grid").remove();
     const grid = document.createElement("div");
     grid.classList.add("column");
@@ -83,8 +82,6 @@ function refreshGrid() {
 
     document.getElementById("grid&feedback").prepend(grid);
     createGrid();
-
-    console.log("grid refreshed");
 }
 
 function roll(count, size) {
