@@ -42,7 +42,7 @@ function createGrid() {
 
         if (weapons["weapons"][i]) {
             const par = document.createElement("p");
-            par.style = "margin-block-end: 0em";
+            par.style = "margin-block-start: 0.5em; margin-block-end: 0.25em";
             par.id = "gridSquare" + i;
 
             const button = document.createElement("input");
@@ -192,17 +192,14 @@ function getMod(weapon) {
 
     if (modType == "strength") {
         if (isNaN(str)) {
-            alert("You must enter a valid strength modifier!");
             return;
         } else mod = str;
     } else if (modType == "dexterity") {
         if (isNaN(dex)) {
-            alert("You must enter a valid dexterity modifier!");
             return;
         } else mod = dex;
     } else if (modType == "finesse") {
         if (isNaN(str) && isNaN(dex)) {
-            alert("You must enter a valid strength or dexterity modifier!");
             return;
         } else if (isNaN(str) || str == "") mod = dex;
         else if (isNaN(dex) || dex == "") mod = str;
