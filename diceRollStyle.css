@@ -1,0 +1,58 @@
+﻿# abobich675.github.io
+
+* {
+    box-sizing: border-box;
+    accent-color: #DD3E3E;
+}
+
+body {
+}
+
+.dice-bag {
+    display: grid;
+    gap: 1em;
+    padding: 1em;
+    text-align: center;
+}
+
+.dice-type-container {
+    margin: auto;
+    padding: 3.5em;
+    background: #f0efed;
+    border: 1px solid #c4c4c4;
+    border-radius: 10px;
+    max-width: 250px;
+}
+
+.d20 {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.d12 {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.d10 {
+    grid-row: 1;
+    grid-column: 3;
+}
+
+.d8 {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.d6 {
+    grid-row: 2;
+    grid-column: 2;
+}
+.d4 {
+    grid-row: 2;
+    grid-column: 3;
+}
+
+.roll-options {
+
+}
