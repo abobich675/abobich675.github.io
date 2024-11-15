@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://abobich675.github.io/react",
+  "homepage": "https://abobich675.github.io/abobich675.github.io",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -19,8 +19,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "dev": "next dev"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
